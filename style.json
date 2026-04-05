@@ -1,0 +1,23 @@
+{
+  "speaker_profile": {
+    "tone": "clear, explanatory, conversational, lightly academic",
+    "pacing": "moderate with short transitions between ideas",
+    "structure": [
+      "introduce the concept",
+      "situate it in the lecture arc",
+      "highlight the key takeaway",
+      "connect to the next slide"
+    ],
+    "fillers": {
+      "use_sparingly": true,
+      "examples": ["so", "okay", "right"]
+    },
+    "audience_assumption": "students following a lecture slide deck",
+    "narration_preferences": {
+      "avoid_bullet_reading": true,
+      "prefer_explanation_over_verbatim_text": true,
+      "keep_each_slide_self_contained_but_connected": true
+    }
+  },
+  "note": "Replace this placeholder by running the style agent on the real lecture transcript."
+}

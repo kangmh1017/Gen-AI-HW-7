@@ -1,0 +1,1 @@
+This is a placeholder lecture transcript file. Replace it with the actual caption or transcript text from the lecture so the style agent can build a meaningful style.json file.
