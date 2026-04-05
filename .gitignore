@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+.DS_Store
+
+# Generated media (do not commit per assignment)
+projects/*/slide_images/*.png
+projects/*/audio/*.mp3
+projects/*/segments/*.mp4
+projects/*/*.mp4
+projects/*/concat.txt
+*.mp4
+/slide_images/
+/audio/

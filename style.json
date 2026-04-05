@@ -1,0 +1,26 @@
+{
+  "speaker_profile": {
+    "tone": "clear, explanatory, conversational, lightly academic",
+    "pacing": "moderate, with short pauses between ideas",
+    "fillers": [],
+    "framing_devices": [
+      "Let's start with",
+      "The main idea is"
+    ],
+    "transitions": [
+      "first",
+      "next",
+      "so",
+      "the key point is"
+    ],
+    "rhetorical_habits": [
+      "signposting upcoming sections"
+    ],
+    "audience_assumption": "students following a lecture",
+    "narration_preferences": {
+      "avoid_bullet_reading": true,
+      "prefer_explanation_over_verbatim_text": true,
+      "other": "Explain concepts in plain language before jargon."
+    }
+  }
+}
