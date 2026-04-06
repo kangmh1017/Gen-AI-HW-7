@@ -51,6 +51,17 @@ python run_lecture_pipeline.py \
   --transcript lecture_transcript.txt
 ```
 
+### Avoid `cd` / copy-paste mistakes
+
+Do **not** use placeholder paths like `cd ".../agentic_video_lecture_pipeline"` — use the real folder path, or run the helper (from the repo root):
+
+```bash
+chmod +x run_full_pipeline.sh   # once
+./run_full_pipeline.sh --pdf Lecture_17_AI_screenplays.pdf --transcript lecture_transcript.txt --project-name project_api_run
+```
+
+The script `cd`s to its own directory, uses `.venv/bin/python` if present, and prepends common **ffmpeg** locations to `PATH` when needed.
+
 ## Submission checklist
 
 - [ ] Code + README + requirements + PDF in repo  
