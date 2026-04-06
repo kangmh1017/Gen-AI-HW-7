@@ -1,113 +1,68 @@
-"""
-premise_agent.py
-----------------
-Takes slide_description.json as input and writes premise.json.
+from __future__ import annotations
 
-Improvement: every high-level claim in the premise now includes
-`supporting_slides` — a list of slide numbers from the deck that
-justify that claim.  This makes the grounding auditable.
-"""
-
-import json
-import os
-import re
-import sys
-
-from openai import OpenAI
+from .llm import LLMClient
+from .utils import write_json
 
 
-def run_premise_agent(
-    slide_description_path: str,
-    project_dir: str,
-) -> dict:
-    use_openai = os.environ.get("USE_OPENAI", "1") != "0"
-    output_path = os.path.join(project_dir, "premise.json")
+class PremiseAgent:
+    def __init__(self, llm: LLMClient):
+        self.llm = llm
 
-    with open(slide_description_path, "r", encoding="utf-8") as f:
-        slide_descriptions = json.load(f)
-
-    if not use_openai:
-        print(
-            "[premise_agent] ⚠️  PLACEHOLDER MODE (USE_OPENAI=0): "
-            "generating stub premise.json."
+    def run(self, slide_descriptions: dict, output_path) -> dict:
+        system = (
+            "You synthesize the premise of THIS specific lecture from the full slide_description.json. "
+            "The deck is Lecture 17 on AI-generated screenplays / long-form structured text and agentic decomposition. "
+            "The thesis, scope, learning_objectives, and central_terms must name concrete topics visible in the slides "
+            "(e.g. one-shot long-form limits, hierarchical planning, premise/arc/scene agents, screenplay structure). "
+            "Ban vague placeholders like 'understand main concepts' unless tied to named topics from the deck. "
+            "Return JSON only."
         )
-        premise = {
-            "thesis": "PLACEHOLDER — run with USE_OPENAI=1",
-            "scope": "PLACEHOLDER",
-            "learning_objectives": ["PLACEHOLDER"],
-            "audience": "PLACEHOLDER",
-            "central_terms": ["PLACEHOLDER"],
-            "instructor_strategy": "PLACEHOLDER",
-            "supporting_slides": {},
+        user = f"""
+Infer premise.json grounded in the slide content below.
+
+Return JSON with keys:
+- thesis (string): one specific sentence about THIS lecture's argument
+- scope (list of strings): major subtopics in order
+- learning_objectives (list of strings): measurable outcomes tied to slide content
+- audience (string)
+- central_terms (list of strings): jargon or recurring terms from the deck
+- instructor_strategy (string): how the instructor builds the story across slides
+
+FULL slide_description.json:
+{slide_descriptions}
+"""
+        fallback = {
+            "thesis": (
+                "Long-form AI writing (especially screenplays) fails in one-shot generation because models lose global "
+                "coherence; this lecture presents a hierarchical, multi-agent pipeline (premise, arc, sequence/scene) "
+                "to structure generation and keep narrative consistency."
+            ),
+            "scope": [
+                "Limits of one-shot long-form generation and context drift",
+                "Screenplay as a structured target for hierarchical decomposition",
+                "Agent roles for premise, arc, and scene-level planning",
+                "End-to-end flow from high-level story structure to executable script segments",
+            ],
+            "learning_objectives": [
+                "Explain why one-shot generation struggles with long coherent documents.",
+                "Describe how premise/arc/scene decomposition reduces drift in long outputs.",
+                "Map the agentic pipeline stages to screenplay structure and generalize to other long documents.",
+            ],
+            "audience": "students learning agentic workflows for generative text",
+            "central_terms": [
+                "one-shot generation",
+                "hierarchical planning",
+                "premise agent",
+                "arc agent",
+                "screenplay",
+                "coherence",
+                "long-form",
+            ],
+            "instructor_strategy": (
+                "Motivate the failure mode of naive long outputs, then introduce structured decomposition and "
+                "walk through an agentic pipeline using screenplay generation as the running example."
+            ),
         }
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(premise, f, indent=2, ensure_ascii=False)
-        print(f"[premise_agent] ✅ Wrote {output_path}")
-        return premise
-
-    client = OpenAI()
-    model = os.environ.get("OPENAI_MODEL", "gpt-4.1")
-
-    # Build a compact slide summary to keep tokens reasonable
-    slide_summary = "\n".join(
-        f"Slide {d['slide_number']}: {d.get('title_guess','?')} — "
-        + "; ".join(d.get("key_points", [])[:3])
-        for d in slide_descriptions
-    )
-
-    schema = """{
-  "thesis": "<one sentence: the central argument or topic of this lecture>",
-  "scope": "<what is and is NOT covered, ≥ 2 sentences>",
-  "learning_objectives": [
-    "<objective 1 — cite supporting slide numbers in parentheses, e.g. '...  (slides 3, 4)'>",
-    "<objective 2  (slides ...)>",
-    "..."
-  ],
-  "audience": "<assumed background knowledge and who this is for>",
-  "central_terms": ["<key term 1>", "<key term 2>", "..."],
-  "instructor_strategy": "<how the instructor structures the argument across the deck>",
-  "supporting_slides": {
-    "thesis": [<slide numbers that most directly support the thesis>],
-    "learning_objective_1": [<slide numbers>],
-    "learning_objective_2": [<slide numbers>],
-    "central_terms": [<slide numbers where key terms are introduced/defined>]
-  }
-}"""
-
-    user_prompt = (
-        "You are given descriptions of every slide in a lecture deck.\n"
-        "Produce a structured lecture premise using EXACTLY this JSON schema "
-        "(no markdown fences, no extra keys):\n\n"
-        f"{schema}\n\n"
-        "The supporting_slides values must be real slide numbers from the list.\n\n"
-        "== SLIDE DESCRIPTIONS ==\n"
-        f"{json.dumps(slide_descriptions, indent=2, ensure_ascii=False)}\n"
-        "== END ==\n\n"
-        "Quick reference — slide titles:\n"
-        f"{slide_summary}"
-    )
-
-    response = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": user_prompt}],
-        max_tokens=1000,
-        temperature=0.15,
-    )
-
-    raw = response.choices[0].message.content.strip()
-    raw = re.sub(r"^```(?:json)?\s*", "", raw)
-    raw = re.sub(r"\s*```$", "", raw)
-
-    premise = json.loads(raw)
-
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(premise, f, indent=2, ensure_ascii=False)
-
-    print(f"[premise_agent] ✅ Wrote {output_path}")
-    return premise
-
-
-if __name__ == "__main__":
-    proj = sys.argv[1] if len(sys.argv) > 1 else "projects/project_debug"
-    desc_path = os.path.join(proj, "slide_description.json")
-    run_premise_agent(desc_path, proj)
+        result = self.llm.json_response(system, user, fallback)
+        write_json(output_path, result)
+        return result

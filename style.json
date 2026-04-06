@@ -1,26 +1,28 @@
 {
   "speaker_profile": {
-    "tone": "clear, explanatory, conversational, lightly academic",
-    "pacing": "moderate, with short pauses between ideas",
+    "tone": "Use transcript evidence when API is available; offline mode uses excerpt-based fallbacks.",
+    "pacing": "See transcript for rhythm; offline fallback cannot infer pacing reliably.",
     "fillers": [],
-    "framing_devices": [
-      "Let's start with",
-      "The main idea is"
-    ],
-    "transitions": [
-      "first",
-      "next",
-      "so",
-      "the key point is"
-    ],
+    "framing_devices": [],
+    "transitions": [],
     "rhetorical_habits": [
-      "signposting upcoming sections"
+      "signposting and informal asides (verify against transcript when online)"
     ],
-    "audience_assumption": "students following a lecture",
+    "evidence_phrases": [
+      "And then once you plug it back in, she asks you, like, why'd you do that?",
+      "And you're like, oh, my bad, you're right, I shouldn't have done that.",
+      "But, like, it deleted her emails without her permission.",
+      "Now, is that a true story, or is that fake Twitter propaganda?",
+      "I don't know, but this is why I didn't do Clodbot yet.",
+      "I'm waiting for, like, people to be, like, the guinea pigs, and…",
+      "lose their email before I make you people, like,",
+      "So, that was also yesterday, I saw that in Twitter."
+    ],
+    "audience_assumption": "students in a live class session",
     "narration_preferences": {
       "avoid_bullet_reading": true,
       "prefer_explanation_over_verbatim_text": true,
-      "other": "Explain concepts in plain language before jargon."
+      "other": "Re-run with OPENAI and billing enabled for transcript-grounded style."
     }
   }
 }
