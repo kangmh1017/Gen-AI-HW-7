@@ -18,6 +18,10 @@ Homework 7: **`Lecture_17_AI_screenplays.pdf`** → per-slide PNGs → agent JSO
 - **`USE_OPENAI=1`** (default) + valid **`OPENAI_API_KEY`**: models fill the JSON fields above from images + transcript + chaining. **Re-run after code changes** and commit updated JSON so the repo matches the prompts.
 - **`USE_OPENAI=0`**: heuristic **fallbacks** run (no API). Outputs are **structurally valid** but **not** graded as full “agentic” quality — use only to test ffmpeg/path wiring.
 
+### Quota / 429 errors
+
+If the API returns **429 (insufficient quota)**, the pipeline **does not stop by default**: each agent step uses its **schema fallback**, and TTS writes **placeholder MP3s** so video assembly can still finish. You will see **`WARNING:`** lines on stderr. Set **`OPENAI_FALLBACK_ON_ERROR=0`** if you prefer the run to **exit immediately** on API errors instead.
+
 ## Repo layout
 
 ```text

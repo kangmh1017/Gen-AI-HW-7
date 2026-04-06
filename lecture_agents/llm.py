@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
@@ -12,6 +13,7 @@ try:
 except Exception:  # pragma: no cover
     OpenAI = None
 
+
 UserContent = Union[str, List[Dict[str, Any]]]
 
 
@@ -20,6 +22,24 @@ class LLMClient:
         self.model = model
         self.enabled = enabled and bool(os.getenv("OPENAI_API_KEY")) and OpenAI is not None
         self.client = OpenAI() if self.enabled else None
+
+    @staticmethod
+    def _api_quota_exhausted(exc: BaseException) -> bool:
+        code = getattr(exc, "status_code", None)
+        if code == 429:
+            return True
+        resp = getattr(exc, "response", None)
+        if resp is not None and getattr(resp, "status_code", None) == 429:
+            return True
+        if "RateLimit" in type(exc).__name__:
+            return True
+        msg = str(exc).lower()
+        if "429" in msg or "insufficient_quota" in msg or "rate limit" in msg:
+            return True
+        return False
+
+    def _fallback_on_api_error(self) -> bool:
+        return os.getenv("OPENAI_FALLBACK_ON_ERROR", "1") == "1"
 
     def _user_content(self, user_prompt: str, image_path: Optional[Path] = None) -> UserContent:
         if image_path is None:
@@ -60,25 +80,44 @@ class LLMClient:
         if not self.enabled:
             return schema_hint
 
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": self._user_content(user_prompt, image_path)},
-            ],
-            response_format={"type": "json_object"},
-        )
-        return self._parse_json_object(self._message_content(response))
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": self._user_content(user_prompt, image_path)},
+                ],
+                response_format={"type": "json_object"},
+            )
+            return self._parse_json_object(self._message_content(response))
+        except Exception as e:
+            if self._fallback_on_api_error() and self._api_quota_exhausted(e):
+                print(
+                    "WARNING: OpenAI returned 429 / quota. Using local fallback for this step. "
+                    "Add billing or set USE_OPENAI=0. Set OPENAI_FALLBACK_ON_ERROR=0 to fail fast instead.",
+                    file=sys.stderr,
+                )
+                return schema_hint
+            raise
 
     def text_response(self, system_prompt: str, user_prompt: str, image_path: Optional[Path] = None) -> str:
         if not self.enabled:
             return user_prompt[:1200]
 
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": self._user_content(user_prompt, image_path)},
-            ],
-        )
-        return self._message_content(response).strip()
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": self._user_content(user_prompt, image_path)},
+                ],
+            )
+            return self._message_content(response).strip()
+        except Exception as e:
+            if self._fallback_on_api_error() and self._api_quota_exhausted(e):
+                print(
+                    "WARNING: OpenAI returned 429 / quota. Using truncated prompt as fallback.",
+                    file=sys.stderr,
+                )
+                return user_prompt[:1200]
+            raise

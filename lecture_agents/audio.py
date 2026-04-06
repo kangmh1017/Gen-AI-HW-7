@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import re
+import sys
 import tempfile
 from pathlib import Path
 from typing import Iterable, List
@@ -61,6 +62,14 @@ def _trim_trailing_silence(segment: AudioSegment, chunk_ms: int = 200, silence_t
             break
         out = out[:-chunk_ms]
     return out
+
+
+def _tts_quota_error(exc: Exception) -> bool:
+    code = getattr(exc, "status_code", None)
+    if code == 429:
+        return True
+    msg = str(exc).lower()
+    return "429" in msg or "insufficient_quota" in msg or "rate limit" in msg
 
 
 def _write_placeholder_mp3(path: Path, slide_num: int) -> None:
@@ -129,4 +138,14 @@ class AudioSynthesizer:
                 else:
                     _write_placeholder_mp3(out_path, int(slide["slide_number"]))
                 continue
-            self._synthesize_chunks_merged(text, out_path)
+            try:
+                self._synthesize_chunks_merged(text, out_path)
+            except Exception as e:
+                if os.getenv("OPENAI_FALLBACK_ON_ERROR", "1") == "1" and _tts_quota_error(e):
+                    print(
+                        f"WARNING: TTS failed for slide {slide['slide_number']} ({e!s}); writing placeholder MP3.",
+                        file=sys.stderr,
+                    )
+                    _write_placeholder_mp3(out_path, int(slide["slide_number"]))
+                else:
+                    raise
