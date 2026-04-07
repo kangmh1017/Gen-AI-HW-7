@@ -72,27 +72,6 @@ def _tts_quota_error(exc: Exception) -> bool:
     return "429" in msg or "insufficient_quota" in msg or "rate limit" in msg
 
 
-def _write_placeholder_mp3(path: Path, slide_num: int) -> None:
-    """Minimal valid MP3 when TTS is off (labelled so graders know it is not real speech)."""
-    comment = f"PLACEHOLDER AUDIO — slide {slide_num} — set USE_OPENAI=1 for TTS".encode("latin-1", errors="replace")
-    frame_payload = b"\x00" + b"eng" + b"\x00" + comment + b"\x00"
-    frame_size = len(frame_payload).to_bytes(4, "big")
-    id3_frame = b"COMM" + frame_size + b"\x00\x00" + frame_payload
-    id3_size = len(id3_frame)
-    ss = bytes(
-        [
-            (id3_size >> 21) & 0x7F,
-            (id3_size >> 14) & 0x7F,
-            (id3_size >> 7) & 0x7F,
-            id3_size & 0x7F,
-        ]
-    )
-    id3 = b"ID3\x03\x00\x00" + ss + id3_frame
-    mp3_frame = b"\xff\xfb\x90\x00" + b"\x00" * 417
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_bytes(id3 + mp3_frame)
-
-
 class AudioSynthesizer:
     def __init__(self, model: str, voice: str):
         self.model = model
@@ -133,19 +112,16 @@ class AudioSynthesizer:
             out_path = output_dir / f"slide_{slide['slide_number']:03d}.mp3"
             text = (slide.get("narration") or "").strip()
             if not self.enabled:
-                if not text:
-                    self._silent_mp3(out_path)
-                else:
-                    _write_placeholder_mp3(out_path, int(slide["slide_number"]))
+                self._silent_mp3(out_path, duration_ms=2500)
                 continue
             try:
                 self._synthesize_chunks_merged(text, out_path)
             except Exception as e:
                 if os.getenv("OPENAI_FALLBACK_ON_ERROR", "1") == "1" and _tts_quota_error(e):
                     print(
-                        f"WARNING: TTS failed for slide {slide['slide_number']} ({e!s}); writing placeholder MP3.",
+                        f"WARNING: TTS failed for slide {slide['slide_number']} ({e!s}); writing silent MP3 for mux.",
                         file=sys.stderr,
                     )
-                    _write_placeholder_mp3(out_path, int(slide["slide_number"]))
+                    self._silent_mp3(out_path, duration_ms=2500)
                 else:
                     raise
