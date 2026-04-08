@@ -40,13 +40,10 @@ class NarrationAgent:
             is_title_slide = idx == 1
 
             system = (
-                "You write spoken lecture narration for ONE slide. Output must sound like a human instructor, not a template. "
-                "You MUST use STYLE.speaker_profile: mirror tone, pacing, evidence_phrases vibe, framing_devices, "
-                "transitions, and fillers where natural. "
-                "Use PREMISE and ARC for what this lecture is trying to accomplish. "
-                "Use carryover_concepts and relation_to_previous from the current slide description to connect to prior slides. "
-                "Vary sentence openings across slides — do NOT start multiple slides the same way. "
-                "Do not read bullet points verbatim; paraphrase and explain. "
+                "You write spoken lecture narration for ONE slide — like a real classroom, not polished homework prose. "
+                "Use STYLE.speaker_profile (tone, pacing, evidence_phrases, teaching_moves if present, framing, transitions, fillers) where it fits naturally. "
+                "Ground turns in carryover_concepts and relation_to_previous from the slide description. "
+                "Do not read bullets aloud; explain in plain spoken English. Vary how you open each slide. "
                 "Return JSON only."
             )
             user = f"""
@@ -72,14 +69,21 @@ PRIOR SLIDE NARRATIONS (with transition_out where present):
 
 Return JSON with keys:
 - slide_number (int)
-- narration (string): 80–220 words for non-title slides unless the slide is very sparse. For title: 60–120 words.
-- speaking_notes (array of strings): 2–4 brief reminders for the speaker
-- transition_out (string): one or two sentences that bridge toward the NEXT slide's topic (or closing thought on last slide)
+- teaching_goal (string): one short phrase — what you want the listener to leave this slide with (for your planning; stays out of TTS if you keep narration self-contained)
+- narration (string): spoken script only. Non-title: about 70–190 words (shorter if the slide is thin). Title: about 55–110 words. Sound conversational, not formal.
+- speaking_notes (array of strings): 2–4 brief speaker reminders
+- transition_out (string): one or two sentences toward the NEXT slide (or a closing line on the last slide)
+
+Pedagogy (weave in only where it fits — pick roughly 1–2 ideas per non-title slide, not a checklist):
+- A place a student might stumble or a common misconception
+- The intuitive gloss on a technical idea (plain language before jargon)
+- Why this slide matters for the lecture’s overall argument
+- What mental picture or question sets up the next slide
 
 Rules:
-- Title slide: introduce yourself in the instructor voice and summarize what this lecture covers (AI screenplays / long-form agentic generation as in the deck).
-- Non-title: explicitly connect to the immediately previous slide using prior narrations + relation_to_previous; add one new idea from THIS slide's summary/bullets explained in plain language.
-- Forbidden patterns: do not use "On this slide, we build on the previous discussion by focusing on Slide K" or "The main point here is" as a stock opener.
+- Title: brief self-intro in voice + what we’ll do today (deck topic: long-form / screenplays / agentic pipelines as appropriate).
+- Non-title: tie to the previous slide in substance using relation_to_previous + carryover_concepts; avoid empty continuity.
+- Do NOT sound like a rubric: no “In this slide we will discuss…”, no stock “the main point is…”, no numbered essay structure.
 - TTS-safe: no markdown, no bracketed stage directions.
 """
             # Varied offline fallbacks (avoid identical template every slide)
@@ -125,8 +129,14 @@ Rules:
                     else "That wraps the technical through-line; we’ll consolidate takeaways on the final slides."
                 )
 
+            fb_goal = (
+                "Frame the session and preview the long-form / screenplay pipeline story."
+                if is_title_slide
+                else f"Connect prior ideas to {tit} and make one idea stick."
+            )
             fallback = {
                 "slide_number": idx,
+                "teaching_goal": fb_goal,
                 "narration": fb_narr,
                 "speaking_notes": [
                     "Explain, don’t enumerate bullets",

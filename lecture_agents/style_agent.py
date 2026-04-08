@@ -65,6 +65,9 @@ Required JSON shape:
     "framing_devices": ["<recurring ways they set up ideas — must appear in transcript>"],
     "transitions": ["<recurring connective phrases actually used — no generic filler if absent>"],
     "rhetorical_habits": ["<patterns visible in transcript>"],
+    "teaching_moves": [
+      "<2–5 short labels for HOW they explain: e.g. gives a concrete story before the rule; flags a caveat before a recommendation; restates the contrast after a dense section — each must be inferable from the transcript, not generic pedagogy>"
+    ],
     "evidence_phrases": [
       "<5–10 SHORT verbatim quotes copied exactly from the transcript below — distinctive phrases, signposts, hedges>"
     ],
@@ -94,6 +97,9 @@ TRANSCRIPT:
                 "framing_devices": [],
                 "transitions": [],
                 "rhetorical_habits": ["signposting and informal asides (verify against transcript when online)"],
+                "teaching_moves": [
+                    "Uses informal asides and news-style examples to motivate ideas before formal framing (verify when online).",
+                ],
                 "evidence_phrases": fb_ev,
                 "audience_assumption": "students in a live class session",
                 "narration_preferences": {

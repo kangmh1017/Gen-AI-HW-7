@@ -18,9 +18,8 @@ class SlideDescriptionAgent:
             prior_full = [dict(s) for s in slides]
             prior_json = json.dumps(prior_full, indent=2, ensure_ascii=False)
             system = (
-                "You describe one lecture slide at a time. You always receive the current slide image plus the "
-                "complete JSON for every earlier slide. Prior descriptions are mandatory context: reuse their "
-                "terminology and show how the argument progresses. "
+                "You describe one lecture slide at a time with the slide image and the full JSON of all prior slides. "
+                "Chain ideas conceptually: why would an instructor put THIS slide immediately after what came before? "
                 "Return JSON only."
             )
             user = f"""
@@ -39,11 +38,11 @@ Return JSON with these keys:
 - summary (string)
 - bullet_points (list of strings)
 - visual_elements (list of strings)
-- carryover_concepts (list of 1–3 strings): concepts or terms carried forward FROM prior slides into this slide's role (empty list on slide 1)
-- relation_to_previous (string): For slide 1 use exactly "N/A (first slide)". For slide 2+: write 1–2 sentences that NAME specific ideas from the previous slide's title_guess, summary, or bullet_points — never use only "builds on slide K" or similar.
+- carryover_concepts (list of 1–3 strings): the specific concepts or tensions from earlier slides that THIS slide is answering, tightening, or pivoting from (empty on slide 1). Name ideas, not slide numbers alone.
+- relation_to_previous (string): Slide 1: exactly "N/A (first slide)". Slide 2+: 1–2 tight sentences on *why this slide appears now* in the argument — e.g. after establishing limitation X, this introduces structure Y; or now that we named concept A, we need mechanism B. Use carryover_concepts explicitly by name. No filler bridges.
 - likely_pedagogical_purpose (string)
 
-Hard ban: relation_to_previous must NOT be a single generic phrase like "builds on slide X" or "continues the lecture".
+Banned in relation_to_previous: "continues the previous discussion", "builds on slide N", "this slide follows from the last one" without naming a concrete conceptual move.
 """
             prev = slides[-1] if slides else None
             prev_title = (prev or {}).get("title_guess", "")
@@ -53,8 +52,8 @@ Hard ban: relation_to_previous must NOT be a single generic phrase like "builds 
             if idx > 1 and prev:
                 fallback_carry = [prev_title] if prev_title else []
                 fallback_relation = (
-                    f"This slide extends the prior discussion anchored in “{prev_title}”, "
-                    f"carrying forward the ideas around: {prev_sum}."
+                    f"After laying out «{prev_title}», this slide is the next conceptual beat: "
+                    f"it presses on {prev_sum[:120]}… rather than repeating the same point."
                 )
 
             fallback = {
