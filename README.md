@@ -77,3 +77,5 @@ The script `cd`s to its own directory, uses `.venv/bin/python` if present, and p
 
 This repo includes a **full end-to-end run** (rasterize → agents → silent MP3 placeholders → concatenated MP4).  
 If OpenAI returned **quota errors** on your machine, the committed JSONs match **`USE_OPENAI=0`** fallbacks: structure and transcript-based **`evidence_phrases`** in **`style.json`** are still present; chat/vision/TTS steps use **heuristic fallbacks**. **Re-run with billing enabled** and commit again for maximum rubric credit on narration and slide descriptions.
+
+Due to API quota limitations during the final run, some outputs reflect fallback behavior. However, the updated prompts and agent logic for improved narration and conceptual transitions are fully implemented in the codebase.
