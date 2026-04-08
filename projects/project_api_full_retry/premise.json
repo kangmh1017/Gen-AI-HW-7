@@ -1,0 +1,25 @@
+{
+  "thesis": "Long-form AI writing (especially screenplays) fails in one-shot generation because models lose global coherence; this lecture presents a hierarchical, multi-agent pipeline (premise, arc, sequence/scene) to structure generation and keep narrative consistency.",
+  "scope": [
+    "Limits of one-shot long-form generation and context drift",
+    "Screenplay as a structured target for hierarchical decomposition",
+    "Agent roles for premise, arc, and scene-level planning",
+    "End-to-end flow from high-level story structure to executable script segments"
+  ],
+  "learning_objectives": [
+    "Explain why one-shot generation struggles with long coherent documents.",
+    "Describe how premise/arc/scene decomposition reduces drift in long outputs.",
+    "Map the agentic pipeline stages to screenplay structure and generalize to other long documents."
+  ],
+  "audience": "students learning agentic workflows for generative text",
+  "central_terms": [
+    "one-shot generation",
+    "hierarchical planning",
+    "premise agent",
+    "arc agent",
+    "screenplay",
+    "coherence",
+    "long-form"
+  ],
+  "instructor_strategy": "Motivate the failure mode of naive long outputs, then introduce structured decomposition and walk through an agentic pipeline using screenplay generation as the running example."
+}
