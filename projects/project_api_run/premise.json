@@ -1,30 +1,42 @@
 {
-  "thesis": "Long-form AI writing (especially screenplays) fails in one-shot generation because models lose global coherence; this lecture presents a hierarchical, multi-agent pipeline (premise, arc, sequence/scene) to structure generation and keep narrative consistency.",
+  "thesis": "This lecture argues that generating coherent, feature-length AI screenplays requires decomposing the writing task into hierarchical stages, with specialized agents coordinating premise, arc, sequence, and scene generation to overcome one-shot coherence failures and ensure narrative consistency.",
   "scope": [
-    "Limits of one-shot long-form generation and context drift",
-    "Screenplay as a structured target for hierarchical decomposition",
-    "Agent roles for premise, arc, sequence, and scene-level planning",
-    "End-to-end flow and generalization to other long documents"
+    "Motivating AI-generated screenplays within the entertainment industry",
+    "Limitations of one-shot long-form generation: context drift and coherence loss",
+    "Hierarchical structure of screenplays (premise, arc, sequences, scenes)",
+    "Stage-wise agentic workflow: premise agent, arc agent, sequence agent, scene agent",
+    "Inspection of structured JSON outputs at each step",
+    "Role and design of enhancement agents for intermediate improvement",
+    "Generalizing hierarchical agentic flows to other long-form documents",
+    "Hands-on coding and workflow adaptation practices"
   ],
   "learning_objectives": [
-    "Explain why one-shot generation struggles with long coherent documents.",
-    "Describe how premise/arc/scene decomposition reduces drift in long outputs.",
-    "Map the agentic pipeline stages to screenplay structure and generalize to other long documents."
+    "Identify and explain why one-shot AI generation fails at long-form coherence due to local vs. global context limitations (Slide 3).",
+    "Describe and schematize the hierarchical components of a movie screenplay: premise, story arc, sequences, scenes (Slides 4–5).",
+    "Map each agent (Premise Agent, Arc Agent, Sequence Agent, Scene Agent) to its structural role and the input/output JSON artifacts it produces (Slides 6–15).",
+    "Analyze the function and impact of enhancement agents on intermediate screenplay outputs and explain where they fit in the workflow (Slide 16).",
+    "Apply the hierarchical agent workflow by adapting it to generate other structured long-form documents and recognize analogous stages (Slide 17).",
+    "Construct or extend an agentic pipeline for screenplay generation, inserting enhancement stages and transferring the approach to non-script documents (Slide 18)."
   ],
-  "audience": "students learning agentic workflows for generative text",
+  "audience": "Students with foundational knowledge of AI text generation who wish to learn advanced, agent-based approaches for scalable, structured, and coherent long-form creative writing.",
   "central_terms": [
-    "one-shot generation",
-    "hierarchical planning",
-    "premise agent",
-    "arc agent",
-    "screenplay",
-    "coherence",
-    "long-form"
+    "One-shot generation",
+    "Context drift",
+    "Hierarchical structure",
+    "Premise agent",
+    "Arc agent",
+    "Sequence agent",
+    "Scene agent",
+    "Premise.json",
+    "Arc.json",
+    "Sequence.json",
+    "Scenes.json",
+    "Enhancement agents",
+    "Stage-wise generation",
+    "Coherence"
   ],
-  "instructor_strategy": "Motivate the failure mode of naive long outputs, then introduce structured decomposition and walk through an agentic pipeline using screenplay generation as the running example.",
+  "instructor_strategy": "The instructor scaffolds understanding by first highlighting the failure modes of naïve generation (context drift, loss of coherence), then systematically introducing the hierarchical decomposition of screenplays. Each stage—premise, arc, sequence, scene—is illustrated first through process flowcharts and agent role descriptions, then grounded with concrete JSON examples. After presenting the baseline pipeline, the instructor discusses enhancement agents for quality improvement and culminates with adaptation of the workflow to other document types, ending with an applied coding session.",
   "supporting_slides": [
-    1,
-    2,
     3,
     4,
     5,
@@ -39,9 +51,8 @@
     14,
     15,
     16,
-    17,
-    18
+    17
   ],
-  "why_this_matters": "Without staged planning, long generative outputs drift and contradict themselves; treating screenplays as hierarchical artifacts makes automation tractable and transfers to books, reports, and other long forms.",
-  "pedagogical_focus": "Students should be able to justify multi-stage agent design from coherence requirements, not merely list tool names."
+  "why_this_matters": "Long-form text generation by AI often fails due to the inability to maintain global structure and coherence over many pages, leading to narratives that lose focus, consistency, or introduce hallucinations. This lecture matters because it demonstrates how hierarchical, agent-driven workflows—where each agent owns a compositional level of the document—can reliably produce complex, structured works by enforcing progressive planning, modular generation, and explicit context passing. Such decomposition is central to scaling AI creativity, designing robust agentic pipelines, and generalizing the methodology to any domain demanding structured, high-fidelity documents.",
+  "pedagogical_focus": "Students should leave able to explicitly map and critique each stage of the agentic screenplay pipeline, diagnose points of narrative drift or incoherence, and transfer the hierarchical decomposition approach to other document formats requiring structure, modularity, and staged coherence."
 }

@@ -1,50 +1,100 @@
 {
-  "overview": "The deck moves from the failure mode of naive long-form generation to a structured, multi-stage agent design for screenplays, closing with how that pipeline generalizes.",
+  "overview": "This lecture demonstrates why naïve, one-shot approaches to AI-generated screenplays fail to maintain narrative coherence and introduces a modular, agent-based workflow that decomposes the writing process into hierarchical stages: premise, arc, sequence, and scene. Specialized agents generate and coordinate each stage, building structured JSON outputs that enforce planning, consistency, and narrative flow. The session culminates with strategies to enhance intermediate outputs and extends the methodology to other long-form documents, ending with a hands-on coding challenge.",
   "acts": [
     {
-      "name": "Problem: long-form generation limits",
+      "name": "Motivation and Problem Framing: Why One-Shot AI Fails at Screenplays",
       "start_slide": 1,
-      "end_slide": 6,
-      "function": "Frame and develop ideas in this section of the deck.",
-      "summary": "Why one-shot writing drifts and loses coherence.",
-      "why_this_section_exists": "Students need a crisp failure mode before any architectural fix.",
+      "end_slide": 3,
+      "function": "Ground students in the entertainment context, then reveal the technical and creative challenges of one-shot AI generation for long-form stories.",
+      "summary": "Slides 1-3 introduce the role of AI in screenwriting, then transition to the central challenge of generating long, coherent documents in one shot—highlighting context drift and narrative incoherence.",
+      "why_this_section_exists": "problem framing",
       "slide_numbers": [
         1,
         2,
-        3,
-        4,
-        5,
-        6
+        3
       ]
     },
     {
-      "name": "Design: hierarchical screenplay / agent pipeline",
-      "start_slide": 7,
-      "end_slide": 12,
-      "function": "Frame and develop ideas in this section of the deck.",
-      "summary": "Premise, arc, and scene-level agents for structured output.",
-      "why_this_section_exists": "Once the problem is credible, the lecture introduces the decomposition that addresses it.",
+      "name": "Screenplay Structure and Workflow: Nested Layers and Pipeline Design",
+      "start_slide": 4,
+      "end_slide": 5,
+      "function": "Make the complexity of the target task explicit by uncovering the hierarchical structure of screenplays and operationalizing it into a modular, stage-wise workflow.",
+      "summary": "Slides 4-5 break down screenplays into their compositional layers and present a sequential, data-driven pipeline (Premise → Arc → Sequences → Scenes) to address coherence limitations.",
+      "why_this_section_exists": "structural response",
       "slide_numbers": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "Stage 1: Generating and Structuring the Premise",
+      "start_slide": 6,
+      "end_slide": 9,
+      "function": "Demonstrate in detail how the Premise Agent captures all narrative-critical basics, and showcase the structured JSON output needed for downstream coherence.",
+      "summary": "Slides 6-9 guide students through the process of collaborative premise generation with an AI agent. They inspect the content and depth of a real premise.json file, uncovering how core story information (title, conflict, protagonists, stakes) is formalized.",
+      "why_this_section_exists": "walkthrough example and anchor for hierarchy",
+      "slide_numbers": [
+        6,
         7,
         8,
-        9,
-        10,
-        11,
-        12
+        9
       ]
     },
     {
-      "name": "Synthesis: end-to-end flow and takeaways",
-      "start_slide": 13,
-      "end_slide": 18,
-      "function": "Frame and develop ideas in this section of the deck.",
-      "summary": "How the pieces connect and generalize beyond screenplays.",
-      "why_this_section_exists": "The closing ties mechanism back to transferable document design.",
+      "name": "Stage 2: Building and Encoding the Story Arc",
+      "start_slide": 10,
+      "end_slide": 11,
+      "function": "Show how to progress from a static premise to a dynamic, act-based plot structure through expert-guided collaboration with the Arc Agent, reviewed in arc.json.",
+      "summary": "Slides 10-11 explain the Arc Agent’s interactive act-building collaboration and display a structured arc.json file, revealing act-level planning, dramatic questions, and turning points.",
+      "why_this_section_exists": "structural response and workflow progression",
       "slide_numbers": [
-        13,
+        10,
+        11
+      ]
+    },
+    {
+      "name": "Stage 3: Automated Sequence Generation and Data Output",
+      "start_slide": 12,
+      "end_slide": 13,
+      "function": "Clarify how the Sequence Agent automatically generates detailed narrative segments, using prior layers for context and outputting sequence.json files.",
+      "summary": "Slides 12-13 outline the fully automated production of plot sequences, specifying their narrative function and visualizing a real sequence.json artifact.",
+      "why_this_section_exists": "structural response; demonstrate modularity in pipeline",
+      "slide_numbers": [
+        12,
+        13
+      ]
+    },
+    {
+      "name": "Stage 4: Automated Scene Generation & Granular Story Construction",
+      "start_slide": 14,
+      "end_slide": 15,
+      "function": "Illustrate the final, most granular writing stage: how individual scenes are assembled by the Scene Agent, maintaining local and global coherence in a structured scenes.json format.",
+      "summary": "Slides 14-15 introduce the Scene Agent and show a sample scenes.json file, emphasizing block-by-block composition (actions/dialogue) and machine-readable structure.",
+      "why_this_section_exists": "structural response and pipeline culmination",
+      "slide_numbers": [
         14,
-        15,
-        16,
+        15
+      ]
+    },
+    {
+      "name": "Pipeline Improvement: Enhancement Agents and Quality Control",
+      "start_slide": 16,
+      "end_slide": 16,
+      "function": "Present methods to iteratively refine intermediate outputs using specialized enhancement agents at each stage of the pipeline.",
+      "summary": "Slide 16 introduces enhancement agents, outlining strategies for modular rewriting or polishing of premise, arc, sequences or scenes to yield higher-quality screenplays.",
+      "why_this_section_exists": "quality control, modular improvement",
+      "slide_numbers": [
+        16
+      ]
+    },
+    {
+      "name": "Method Generalization and Applied Practice",
+      "start_slide": 17,
+      "end_slide": 18,
+      "function": "Demonstrate the generality of hierarchical agentic workflows for other documents and culminate in hands-on coding and customization practice.",
+      "summary": "Slides 17-18 show how the pipeline adapts to other long-form documents and launch students into a practical coding session, applying and experimenting with the full agent-based workflow.",
+      "why_this_section_exists": "synthesis and practice",
+      "slide_numbers": [
         17,
         18
       ]
@@ -52,17 +102,47 @@
   ],
   "transitions": [
     {
-      "from_act": "Problem: long-form generation limits",
-      "to_act": "Design: hierarchical screenplay / agent pipeline",
-      "transition_reason": "The deck shifts from Problem: long-form generation limits to Design: hierarchical screenplay / agent pipeline so students do not accept tooling before they accept the coherence problem it solves.",
-      "pedagogical_logic": "Problem motivation must precede architectural prescription."
+      "from_act": "Motivation and Problem Framing: Why One-Shot AI Fails at Screenplays",
+      "to_act": "Screenplay Structure and Workflow: Nested Layers and Pipeline Design",
+      "transition_reason": "Having established the difficulty of one-shot long-form AI generation, the lecture now introduces the screenplay’s inherent complexity and the need for a structured, staged workflow.",
+      "pedagogical_logic": "Students must first appreciate why naïve methods fail (feel the pain) before seeing what structural solution (hierarchy, modularization) actually addresses these problems."
     },
     {
-      "from_act": "Design: hierarchical screenplay / agent pipeline",
-      "to_act": "Synthesis: end-to-end flow and takeaways",
-      "transition_reason": "The deck shifts from Design: hierarchical screenplay / agent pipeline to Synthesis: end-to-end flow and takeaways so students do not accept tooling before they accept the coherence problem it solves.",
-      "pedagogical_logic": "Problem motivation must precede architectural prescription."
+      "from_act": "Screenplay Structure and Workflow: Nested Layers and Pipeline Design",
+      "to_act": "Stage 1: Generating and Structuring the Premise",
+      "transition_reason": "With the hierarchical pipeline introduced, the focus shifts to its first critical stage: capturing the premise in enough structured detail to support downstream generation.",
+      "pedagogical_logic": "It is necessary to show how abstract structure manifests concretely; seeing an in-depth walkthrough at the premise layer anchors understanding of all subsequent layers."
+    },
+    {
+      "from_act": "Stage 1: Generating and Structuring the Premise",
+      "to_act": "Stage 2: Building and Encoding the Story Arc",
+      "transition_reason": "After fully specifying the premise, the next logical step is to construct and formalize the high-level story arc, using premise.json as context.",
+      "pedagogical_logic": "Sequential buildup mirrors narrative creation and demonstrates how each agent’s output becomes another’s input, avoiding cognitive overload by clear handoffs."
+    },
+    {
+      "from_act": "Stage 2: Building and Encoding the Story Arc",
+      "to_act": "Stage 3: Automated Sequence Generation and Data Output",
+      "transition_reason": "Having locked in the arc, attention turns to decomposing each act into detailed, machine-readable sequences, again using structured inputs from above.",
+      "pedagogical_logic": "Shows the recursive application of hierarchical breakdown; working from macro to micro enables students to see why modularity is essential for maintaining coherence."
+    },
+    {
+      "from_act": "Stage 3: Automated Sequence Generation and Data Output",
+      "to_act": "Stage 4: Automated Scene Generation & Granular Story Construction",
+      "transition_reason": "The pipeline naturally proceeds from sequences to their smallest narratively meaningful units: scenes, demonstrating cumulative context and the complete workflow down to the action/dialogue level.",
+      "pedagogical_logic": "Maintains logical progression from less to more granular stages; understanding scene generation only makes sense once sequences (and their context) have been explained."
+    },
+    {
+      "from_act": "Stage 4: Automated Scene Generation & Granular Story Construction",
+      "to_act": "Pipeline Improvement: Enhancement Agents and Quality Control",
+      "transition_reason": "With the baseline agentic pipeline complete, the next step is to tackle limitations of initial drafts by introducing enhancement agents for quality improvement.",
+      "pedagogical_logic": "Students need to see what a first-pass pipeline looks like before they can understand or value modular improvement and iterative refinement; enhancement only makes sense after baseline."
+    },
+    {
+      "from_act": "Pipeline Improvement: Enhancement Agents and Quality Control",
+      "to_act": "Method Generalization and Applied Practice",
+      "transition_reason": "Following specific strategies for screenplay enhancement, students are shown how the pipeline generalizes to other document types, then are tasked to apply and experiment themselves.",
+      "pedagogical_logic": "Concrete enhancements unlock the concept of modular, transferable workflows; synthesis and hands-on practice consolidate technical and conceptual learning."
     }
   ],
-  "ending_function": "Students should see long-form generation as a planning problem solvable with staged agents."
+  "ending_function": "Students conclude with direct applied experience, able to build, critique, and adapt agentic pipelines for long-form, structured document generation, and equipped to transfer these methods to new domains and workflows."
 }

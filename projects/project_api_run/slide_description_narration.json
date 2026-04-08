@@ -3,690 +3,804 @@
     {
       "slide_number": 1,
       "title_guess": "AI Screenplays",
-      "summary": "AI Screenplays",
+      "summary": "This slide introduces the theme of AI-generated screenplays, suggesting a focus on how artificial intelligence intersects with screenwriting and the creative process in film and television. The cartoon image, referencing popular media, hints at a playful or satirical approach to the subject. References to awards and Hollywood imagery set the context within the entertainment industry. The use of AI is symbolized through a robot labeled 'A.W.E.S.O.M.-O,' suggesting that the lecture might examine both the promise and humor associated with AI creativity.",
       "bullet_points": [
-        "AI Screenplays"
+        "Introduction to AI and screenwriting",
+        "Use of popular culture imagery",
+        "Entertainment industry context"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold title at top",
+        "Cartoon scene of office with awards and 'Hollywood' backdrop",
+        "Robot (A.W.E.S.O.M.-O) and TV executive character",
+        "Sign reading 'AWESOME-O LAME'",
+        "Mix of trophies and personal photos on the desk"
       ],
       "key_concepts": [
-        "AI Screenplays"
+        "AI-generated screenplays",
+        "Hollywood and entertainment industry",
+        "Media satire",
+        "Creativity and automation"
       ],
       "carryover_concepts": [],
       "relation_to_previous": "N/A (first slide)",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around AI Screenplays with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Frame long-form AI writing as a planning and decomposition problem.",
-      "likely_confusion_point": "Thinking a single prompt can hold an entire movie in working memory.",
-      "intuitive_hook": "Long text is less like typing a paragraph and more like running a project with dependencies.",
-      "takeaway": "We’re building intuition for staged generation before we name each agent.",
-      "target_word_count": 95,
-      "narration": "Hi — in this session we’re going to treat AI screenplays as a serious long-form writing problem. I’ll walk you through why one-shot generation falls apart on coherence, and how a staged, multi-agent pipeline can keep premise, arc, and scenes aligned. The goal is not just a demo: it’s a reusable pattern for any long document.",
+      "pedagogical_role": "motivate_problem",
+      "what_this_slide_adds": "This slide establishes the core topic—AI's role in screenplay writing—and introduces a humorous, critical context for discussing AI-generated creativity within the film industry.",
+      "likely_pedagogical_purpose": "Set the stage for exploring AI and creativity in film",
+      "teaching_goal": "Spark curiosity about AI writing Hollywood screenplays and give a playful heads-up about the challenges and humor in automating creativity for the film industry.",
+      "likely_confusion_point": "Assuming AI writes movies as easily as it chats; skipping over the real creative hurdles.",
+      "intuitive_hook": "Imagine a robot rolling into a Hollywood office, pitching scripts like it's your weirdest group project partner.",
+      "takeaway": "We're diving into how AI tries (and struggles) to write entire movies—and why doing it well is trickier than a Hollywood plot twist.",
+      "target_word_count": 110,
+      "narration": "Hey everyone, welcome to our not-so-secret mission: seeing if robots can actually write the next Hollywood blockbuster—or if they’ll just get a 'LAME' stamp, like our friend here on the screen. I’m your instructor-slash-narrator, and yes, today’s adventure is all about AI-generated screenplays—where computers try to be creative, and sometimes just end up more awkward than brilliant. We’ll poke fun at the hype, but we’ll also get real about what it actually takes to get AI from generating one-off paragraphs to cranking out full, coherent movie scripts. So, grab your imaginary popcorn, because our roadmap today goes from Hollywood dreams, to AI breakdowns, to building smarter, agent-powered pipelines that might just keep the plot on track. Let’s get rolling!",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Joke about robots and Hollywood awards",
+        "Frame AI as 'wannabe screenwriter'",
+        "Preview session roadmap: why it’s hard, how to fix with agents",
+        "Encourage playful curiosity about what’s coming"
       ],
-      "transition_out": "Next we’ll ground the promise of long outputs in the actual failure modes you hit when you ask for a full script in one go."
+      "transition_out": "Alright, so before our robot gets its Best Screenplay trophy—or epic fail meme—let’s get real about why writing whole movies is such a beast for AI. Where does it all go wrong? Let’s jump in and find out."
     },
     {
       "slide_number": 2,
       "title_guess": "Generating Long Documents",
-      "summary": "Generating Long Documents\n• AI can be used to generate long, coherent \ntext documents\n• Books, reports, screenplays\n• Today we will build an agentic flow to \ngenerate screenplays for movies\n• This flow architecture can be generalized to \nother long text documents",
+      "summary": "This slide introduces the broader application of AI in producing lengthy, coherent text documents such as books, reports, and screenplays. It signals the day's focus on constructing an agentic flow specifically for screenplay generation, while noting that the architectural approach can be generalized to any long-form text generation. The slide sets practical goals for the session, emphasizing transferable methodology.",
       "bullet_points": [
-        "Generating Long Documents",
-        "• AI can be used to generate long, coherent",
-        "text documents",
-        "• Books, reports, screenplays",
-        "• Today we will build an agentic flow to",
-        "generate screenplays for movies",
-        "• This flow architecture can be generalized to",
-        "other long text documents"
+        "AI can be used to generate long, coherent text documents",
+        "Books, reports, screenplays",
+        "Today we will build an agentic flow to generate screenplays for movies",
+        "This flow architecture can be generalized to other long text documents"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold blue heading at top",
+        "Four concise bullet points in black text",
+        "Minimalist, uncluttered layout"
       ],
       "key_concepts": [
-        "Generating Long Documents",
-        "AI can be used to generate long, coherent",
-        "text documents",
-        "Books, reports, screenplays",
-        "Today we will build an agentic flow to"
+        "Long-form text generation",
+        "Agentic flow",
+        "AI for screenwriting",
+        "Document generalization"
       ],
       "carryover_concepts": [
-        "AI Screenplays"
+        "AI-generated screenplays"
       ],
-      "relation_to_previous": "Having developed «AI Screenplays», we now layer in Generating Long Documents so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Generating Long Documents with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Generating Long Documents» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Generating Long Documents as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "Another way to say the same tension: we’re trying to make «Generating Long Documents» actionable. That means turning Generating Long Documents, AI can be used to generate long, coherent, text documents into something you could actually implement. I’m not going to read the slide line by line — I’m going to tell you what matters for coherence and why instructors put this block here.",
+      "relation_to_previous": "The previous slide framed AI participation in creative film contexts, introducing the motif of AI-generated screenplays in popular culture. This slide pivots from that thematic overview to define the technical challenge: generating fully coherent, long-form documents with AI, setting up the specific technical focus on workflow architectures for screenplay production while highlighting broader relevance.",
+      "pedagogical_role": "define_structure",
+      "what_this_slide_adds": "It clarifies that the session will focus on building an agentic workflow for screenplay generation and explicitly positions this technique as applicable to various long document types, not just movies.",
+      "likely_pedagogical_purpose": "Set scope and technical objectives",
+      "teaching_goal": "Students should grasp that today's focus—building AI workflows for movie screenplays—applies broadly to any long, structured document, and that we're tackling the challenges of length and coherence with reusable strategies.",
+      "likely_confusion_point": "Assuming screenplays are a totally special case, not a model for generating other documents.",
+      "intuitive_hook": "Think assembling a book or script isn't like writing a group project—turns out, it kind of is, just way more organized.",
+      "takeaway": "If you can build an agent workflow for movie scripts, you’re basically learning a recipe for any giant AI-generated document.",
+      "target_word_count": 140,
+      "narration": "Okay, so imagine you want AI to help write something way longer than a snappy tweet—like, not just a poem, but a whole book, or the ‘terms and conditions’ you never read, or, in our case, a big movie script. The wild thing is, all these giant documents have something in common: they need to make sense as a whole, not just as a pile of paragraphs. That’s a huge ask for AI. Today, yes, we’re laser-focused on screenplays—because, like, who doesn’t want to train their robot to write the next Avengers? But the real trick we’re learning is how to build these agent-powered pipelines that make the computer plan, organize, and write like a team. This isn’t just for movies! If you nail down the workflow here, you can swap in reports, books—basically any mega-document. Keep that transferability in mind.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Emphasize that the technical challenge is coherence over length",
+        "Screenplays = motivating example, but method is general",
+        "Agent flow is a reusable tool",
+        "Connect the workflow to real-world writing struggles"
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 3."
+      "transition_out": "So, everyone’s on board? Because the headache starts when you ask AI to write anything longer than a haiku. Where does it break down? Let’s zero in on the problem."
     },
     {
       "slide_number": 3,
-      "title_guess": "Challenge: \"One-Shot\"",
-      "summary": "Challenge: \"One-Shot\" \nLong-Form\n• It is difficult for an AI to generate a long \ncoherent document in one-shot\n• Local vs global – the AI is good at writing \nsmall parts, but cannot maintain coherence \nacross whole document\n– Becomes “lost in the middle”\n– Context drift – deep into the document, the AI can \nhallucinate or lose focus of what to write",
+      "title_guess": "Challenge: \"One-Shot\" Long-Form",
+      "summary": "This slide pinpoints a core technical challenge in AI text generation: the difficulty of producing a long, coherent document in a single attempt ('one-shot'). It explains that while AI models often excel at generating locally coherent, short passages, they struggle to preserve consistent global narrative or structure across an entire long-form work. Specific pitfalls such as becoming 'lost in the middle' and experiencing 'context drift'—where the AI loses track of the document's focus or starts to hallucinate content—are highlighted as prevalent issues.",
       "bullet_points": [
-        "Challenge: \"One-Shot\"",
-        "Long-Form",
-        "• It is difficult for an AI to generate a long",
-        "coherent document in one-shot",
-        "• Local vs global – the AI is good at writing",
-        "small parts, but cannot maintain coherence",
-        "across whole document",
-        "– Becomes “lost in the middle”"
+        "It is difficult for an AI to generate a long coherent document in one-shot",
+        "Local vs global – the AI is good at writing small parts, but cannot maintain coherence across whole document",
+        "Becomes 'lost in the middle'",
+        "Context drift – deep into the document, the AI can hallucinate or lose focus of what to write"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large blue bold heading at top",
+        "Standard bullet point layout",
+        "Indented sub-bullets for specific challenges",
+        "High contrast, minimal distraction"
       ],
       "key_concepts": [
-        "Challenge: \"One-Shot\"",
-        "Long-Form",
-        "It is difficult for an AI to generate a long",
-        "coherent document in one-shot",
-        "Local vs global – the AI is good at writing"
+        "One-shot generation",
+        "Local versus global coherence",
+        "Lost in the middle",
+        "Context drift",
+        "AI hallucination"
       ],
       "carryover_concepts": [
-        "Generating Long Documents",
-        "AI can be used to generate long, coherent"
+        "Long-form text generation",
+        "AI for screenwriting"
       ],
-      "relation_to_previous": "Having developed «Generating Long Documents», we now layer in Challenge: \"One-Shot\" so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Challenge: \"One-Shot\" with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Challenge: \"One-Shot\"» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Challenge: \"One-Shot\" as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "From here, think about what you’d *test* if you were peer-reviewing a generated screenplay. Challenge: \"One-Shot\" is basically the checklist for that review: Challenge: \"One-Shot\", Long-Form, It is difficult for an AI to generate a long. The through-line from earlier slides is that decomposition buys you inspectable pieces; this slide names what those pieces should contain.",
+      "relation_to_previous": "After establishing that the session would address building workflows for long-form text (like screenplays), this slide zeroes in on why such workflows are necessary by highlighting a fundamental obstacle: AI's struggle to generate globally coherent documents in one go. It clarifies that the challenge is not merely producing text, but ensuring sustained coherence—underscoring the limitations inherent to current AI generation techniques that must be addressed.",
+      "pedagogical_role": "contrast_limitations",
+      "what_this_slide_adds": "It explains concretely why a simple approach—having AI write everything at once—breaks down, detailing specific failure modes like loss of coherence and focus.",
+      "likely_pedagogical_purpose": "Expose limitations in naïve AI text generation",
+      "teaching_goal": "Students should grasp why having an AI write an entire long document in one go almost always fails—because it loses track of the big picture and drifts off course.",
+      "likely_confusion_point": "Misunderstanding why generating good paragraphs doesn’t add up to a great, whole movie script.",
+      "intuitive_hook": "Like a friend who tells awesome jokes but can’t finish a story without losing the plot halfway through.",
+      "takeaway": "Asking AI to spit out a whole movie script in one shot is a recipe for plot chaos, not script magic.",
+      "target_word_count": 155,
+      "narration": "Alright, so here’s where the real headache kicks in: getting an AI to write something huge—like a whole screenplay—in a single pass. Sounds dreamy, but what actually happens is more like… the world’s worst group chat, where everyone remembers the last message, but nobody knows what the conversation was about half an hour ago. That’s because most language models are fantastic at the local stuff—snappy dialogue, fun descriptions—yet terrible at holding onto the plot when you zoom out. Halfway through, they’re just winging it, making up details, maybe turning your thriller into a comedy by accident. That’s what we mean by getting “lost in the middle,” or worse, “context drift”—where suddenly the hero’s a wizard and you’re like, wait, weren’t we doing a bank heist? If you’re expecting coherence out of the box, let’s just say, you’ll get more chaos than Casablanca. This is why plain one-shot isn’t the answer for long-form AI writing.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Set up the 'lost in the middle' and 'context drift' phrases with humor.",
+        "Emphasize that paragraph-level smarts don’t add up to big-picture brains.",
+        "Use a playful analogy or anecdote about stories drifting off-topic.",
+        "Cue students to expect a smarter workflow structure next."
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 4."
+      "transition_out": "So if AI can’t just sprint to the finish line and hand you a ready-made script, what’s a smarter way to beat chaos? Let’s break down how real screenplays are actually put together."
     },
     {
       "slide_number": 4,
       "title_guess": "Movie Screenplays",
-      "summary": "Movie Screenplays\n• Screenplays have many different elements \nthe AI needs to capture\n– Story shape\n– Goals of “sequences” in the movie\n– Scene action and dialogue\n• Hierarchical structure of a screenplay\n– Premise – basic elements of the movie\n– Story arc – high level plot structure\n– Sequences - more detailed plot\n– Scenes – even more detailed plot",
+      "summary": "This slide breaks down the essential elements in movie screenplays that AI systems must represent in order to generate or understand them. It highlights not only the types of information—like story shape and scene dialogue—but also the screenplay’s nested structure: from premise to story arc, sequences, and individual scenes. This clarifies the complexity and layered nature of the screenplay format, which must be modeled for effective AI-driven generation.",
       "bullet_points": [
-        "Movie Screenplays",
-        "• Screenplays have many different elements",
-        "the AI needs to capture",
-        "– Story shape",
-        "– Goals of “sequences” in the movie",
-        "– Scene action and dialogue",
-        "• Hierarchical structure of a screenplay",
-        "– Premise – basic elements of the movie"
+        "Screenplays have many different elements the AI needs to capture",
+        "Story shape",
+        "Goals of 'sequences' in the movie",
+        "Scene action and dialogue",
+        "Hierarchical structure of a screenplay",
+        "Premise – basic elements of the movie",
+        "Story arc – high level plot structure",
+        "Sequences - more detailed plot",
+        "Scenes – even more detailed plot"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Bold blue heading centered at top",
+        "Two main bulleted sections, each with nested indented sub-bullets",
+        "All black text on high contrast pale background",
+        "No images, diagrams, or decorative elements"
       ],
       "key_concepts": [
-        "Movie Screenplays",
-        "Screenplays have many different elements",
-        "the AI needs to capture",
-        "Story shape",
-        "Goals of “sequences” in the movie"
+        "Screenplay elements",
+        "Hierarchical structure",
+        "Premise",
+        "Story arc",
+        "Sequences and scenes"
       ],
       "carryover_concepts": [
-        "Challenge: \"One-Shot\"",
-        "Long-Form"
+        "Long-form text generation",
+        "AI for screenwriting",
+        "Challenge of coherence"
       ],
-      "relation_to_previous": "Having developed «Challenge: \"One-Shot\"», we now layer in Movie Screenplays so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Movie Screenplays with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Movie Screenplays» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Movie Screenplays as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "So zoom in with me on Movie Screenplays. The add here is: Develops the thread around Movie Screenplays with concrete detail from the deck.. What students often miss is that the hard part isn’t prompting once — it’s keeping later sections from drifting. We’ll keep returning to that as we add agents.",
+      "relation_to_previous": "After emphasizing that AI struggles to generate long, coherent texts due to challenges like context drift, this slide deconstructs what makes screenplays especially demanding: their complex, multi-layered format. It moves from highlighting process limitations to clarifying the structural and content requirements, providing a concrete target for the AI workflow discussed earlier.",
+      "pedagogical_role": "define_structure",
+      "what_this_slide_adds": "It introduces the specific hierarchical organization of screenplays and enumerates elemental story and scene needs, turning abstract AI generation challenges into specific technical requirements.",
+      "likely_pedagogical_purpose": "Clarify screenplay structure as generation target",
+      "teaching_goal": "Students should grasp that movie screenplays are built like nested Russian dolls—layers inside layers—from broad premise down to nitty-gritty dialogue, and that any AI hoping to write a halfway decent script has to explicitly represent and stitch together all these elements.",
+      "likely_confusion_point": "Assuming a screenplay is just a long story or set of scenes, rather than a rigorously structured, multi-level document.",
+      "intuitive_hook": "Think of a screenplay like a building: foundation first, then the skeleton, then rooms, then furniture.",
+      "takeaway": "If you don’t model the full structure—premise to arc to sequence to scene—AI storytelling falls apart way before the credits roll.",
+      "target_word_count": 160,
+      "narration": "So, picture this: before an AI even tries to write the next Inception, it’s got to know what makes up a real screenplay. And, uh, surprise—screenplays aren’t just random conversations and chase scenes glued together! They’re almost obsessively organized, kind of like a set of Russian dolls where each layer fits neatly inside the bigger one. At the top, you have the premise—the big, spark-notes version of the whole movie. But you don’t stop there. The story arc gives your film its backbone, mapping out where the plot rises, crashes, turns upside-down. Break that down further, and you get sequences—big, mission-driven chunks. And finally, you zoom all the way in: scenes. That’s where the line-by-line action and all the quotable dialogue live. If you skip these layers, or muddle them up, your AI goes off the rails, fast. So yeah, designing an agent pipeline means actually respecting—and modeling—every single layer in this super-nested stack. Ignore it, and your robot writes gibberish.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Emphasize nested/hierarchical structure—screenplays aren't flat!",
+        "Use building or Russian doll analogy for layers.",
+        "Point out why AI needs to model each layer, not just scenes.",
+        "Plant expectation for pipeline: each agent owns a layer."
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 5."
+      "transition_out": "Alright, so now that we’re all convinced screenplays are like scaffolding on scaffolding, the next question is: how do we use this breakdown to build a robot writer that doesn’t just wing it? Let’s lay out a pipeline that actually maps to this whole hierarchy."
     },
     {
       "slide_number": 5,
       "title_guess": "Screenplay Flow",
-      "summary": "Screenplay Flow",
+      "summary": "This slide visualizes the structured, step-by-step workflow for generating a coherent screenplay using AI. It presents a flowchart that maps the progression from Premise to Arc to Sequences to Scenes, with each stage corresponding to a JSON file that represents a discrete layer of the screenplay's structure. The diagram underscores the modular and hierarchical design necessary for maintaining coherence and organization in long-form narrative generation.",
       "bullet_points": [
-        "Screenplay Flow"
+        "Premise → Arc → Sequences → Scenes",
+        "Each stage outputs a structured JSON file",
+        "Hierarchical generation process"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Bold, centered slide title in large font",
+        "Color-coded flowchart boxes for each structural stage (blue, purple, orange, green)",
+        "Directional arrows connecting stages left-to-right and top-to-bottom",
+        "Labels for each JSON file format (premise.json, arc.json, sequence.json, scenes.json)",
+        "Small AI robot icon in each box"
       ],
       "key_concepts": [
-        "Screenplay Flow"
+        "Screenplay flow",
+        "Stage-wise generation",
+        "Hierarchical workflow",
+        "JSON representation"
       ],
       "carryover_concepts": [
-        "Movie Screenplays",
-        "Screenplays have many different elements"
+        "Hierarchical structure",
+        "Premise, arc, sequence, scene"
       ],
-      "relation_to_previous": "Having developed «Movie Screenplays», we now layer in Screenplay Flow so students see how the argument advances rather than repeating the same claim.",
+      "relation_to_previous": "Previously, the detailed hierarchical components of a screenplay were enumerated, illustrating the layers from premise to scenes. This slide operationalizes that structure by showing the actual workflow and data outputs connecting each step—making explicit how the AI will move systematically from broad concept (premise) to granular detail (scenes). This clarifies how to implement and enforce coherence at each level.",
       "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Screenplay Flow with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Screenplay Flow» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Screenplay Flow as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "Let me connect this to Movie Screenplays. The move on this part of the deck is to pressure-test the idea that «Screenplay Flow» stands alone — it doesn’t; it sits in a bigger story about structure. In practical terms: Develops the thread around Screenplay Flow with concrete detail from the deck.. I want you to hear the mechanism, not memorize a bullet list.",
+      "what_this_slide_adds": "It introduces a concrete, stage-based generation process for screenplays, linking theoretical structure to actionable workflow and data formats.",
+      "likely_pedagogical_purpose": "Show screenplay generation pipeline",
+      "teaching_goal": "Help students internalize that structured, stage-by-stage workflows are how AI can reliably generate coherent screenplays—each step builds off the last, passing info down a clear pipeline.",
+      "likely_confusion_point": "Students might think these workflow stages happen all at once, or that the output isn’t really ‘modular’ or separated in practice.",
+      "intuitive_hook": "It’s like building a Lego castle layer by layer—don’t dump the pieces all at once and hope for Hogwarts.",
+      "takeaway": "If you want your AI to write a movie that actually hangs together, you need to make it follow this assembly line—one structured JSON chunk at a time.",
+      "target_word_count": 140,
+      "narration": "Take everything we just unpacked about screenplays being this Russian-doll, layered thing—now imagine each layer is its own super-obsessive robot, building just one piece at a time, in a highly organized assembly line. That’s what’s going on here, and honestly, this is the secret sauce: instead of one mega-model freestyling a whole movie in a single, wild go, you build it step-by-step—with the Premise team handing off to the Arc squad, then passing to Sequences, and finally to the Scene specialists. Each step spits out its update as a neat little JSON file—think of it like passing blueprints to the next team, not throwing the whole construction site into a blender. Miss a handoff, and the whole flick goes sideways. So next time you read a movie script that actually makes sense, thank the boring, orderly pipeline. That’s our roadmap to coherence.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Emphasize that each stage is its own mini-project with clear outputs and handoffs.",
+        "Mention the JSONs as blueprints/control levers for each layer.",
+        "Clarify that the order matters—it's not chaos, it's strict sequence.",
+        "Preview that we’ll peek inside an actual JSON output next."
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 6."
+      "transition_out": "Let’s crack open the top-level blueprint—what does a solid AI-generated premise actually look like inside one of these JSONs, and why does that matter so much for everything that follows?"
     },
     {
       "slide_number": 6,
       "title_guess": "Premise Agent",
-      "summary": "Premise Agent\n• A chat agent that discusses with you what your \nmovie is about\n– Title, logline (like an executive summary), characters, genre, \ncentral conflict\n• You can ask the agent to give ideas for the plot if \nyou are stuck\n• This chat can take a few minutes even if you have a \ngeneral sense about your movie (takes time to \nspecify all the major elements of the movie)\n• This agent then creates a file premise.json",
+      "summary": "This slide introduces the 'Premise Agent,' an AI chat tool designed to collaborate with users at the earliest stage of screenplay development. The agent converses with the user to clarify foundational movie elements such as title, logline, main characters, genre, and central conflict, and is capable of proposing plot ideas if the user is uncertain. This interaction is positioned as a thorough, possibly multi-minute dialogue that captures all critical movie details, ultimately producing a structured output file (premise.json) as the first step in the hierarchical screenplay workflow.",
       "bullet_points": [
-        "Premise Agent",
-        "• A chat agent that discusses with you what your",
-        "movie is about",
-        "– Title, logline (like an executive summary), characters, genre,",
-        "central conflict",
-        "• You can ask the agent to give ideas for the plot if",
-        "you are stuck",
-        "• This chat can take a few minutes even if you have a"
+        "A chat agent that discusses with you what your movie is about",
+        "You can ask the agent to give ideas for the plot if you are stuck",
+        "This chat can take a few minutes even if you have a general sense about your movie",
+        "This agent then creates a file premise.json"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large purple bold heading centered at top",
+        "Standard black bullet points with some bolded segments for emphasis",
+        "Indented sub-bullet for required movie elements (title, logline, characters, genre, central conflict)",
+        "Small image of robot in upper right corner"
       ],
       "key_concepts": [
         "Premise Agent",
-        "A chat agent that discusses with you what your",
-        "movie is about",
-        "Title, logline (like an executive summary), characters, genre,",
-        "central conflict"
+        "Interactive chat for story planning",
+        "Premise element specification",
+        "premise.json output"
       ],
       "carryover_concepts": [
-        "Screenplay Flow"
+        "Hierarchical structure",
+        "Premise",
+        "Screenplay flow"
       ],
-      "relation_to_previous": "Having developed «Screenplay Flow», we now layer in Premise Agent so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Premise Agent with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Premise Agent» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Premise Agent as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "If you’re tracking the arc of the lecture, this is where we tighten the screw: Premise Agent. The intuition I’d give you first is that models are locally strong but globally sloppy unless we scaffold them. So here’s the content in spoken form: Premise Agent, A chat agent that discusses with you what your, movie is about. Hold onto that because we’ll reuse it when we wire agents together.",
+      "relation_to_previous": "Previously, the progression from premise to full screenplay was mapped out as a flow involving discrete, structured outputs at each level. This slide now zooms in on the very first of those steps: fleshing out the premise using an interactive agent. It concretizes how the abstract premise stage is operationalized and how a user and AI collaboratively populate the essential story foundations required as input for subsequent stages.",
+      "pedagogical_role": "walkthrough_example",
+      "what_this_slide_adds": "It details the mechanics of how the initial premise is captured through conversation with an AI agent, emphasizing the necessity of thorough upfront definition and the generation of a structured digital artifact (premise.json).",
+      "likely_pedagogical_purpose": "Illustrate user–AI collaboration at the start of screenplay workflow",
+      "teaching_goal": "Make students see how the AI-driven 'Premise Agent' translates a vague movie idea into a concrete, structured foundation for everything that comes next.",
+      "likely_confusion_point": "Thinking the premise step is just a formality, not a critical source of structure.",
+      "intuitive_hook": "It’s like a movie pitch session, but your agent never gets tired or judgy.",
+      "takeaway": "Pinning down every major detail with the Premise Agent isn’t busywork—it’s the blueprint upstream agents absolutely depend on.",
+      "target_word_count": 145,
+      "narration": "So, here’s where our pipeline finally meets the real world: suppose you’ve got a half-baked movie idea, or maybe you’re just vibing on 'Fast and Furious but… in space!'—how do you get from that random daydream to something a robot team could actually write? Welcome, the Premise Agent. This is basically your AI-powered brainstorming buddy—it’ll grill you on all the essentials: not just a title or a cool character, but the nitty-gritty—what’s the main conflict, who are the players, what vibe are we aiming for? Don’t stress if you blank; this thing will pitch ideas until you find one that sticks. Heads up, though—these chats aren’t always lightning fast because, like building IKEA furniture, if you skip the foundation, the whole thing wobbles later. And the output? A perfectly structured little file—premise.json—that’s the DNA for everything downstream. Skipping this is where chaos breeds. Once the premise is nailed, we can finally get granular.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Bridge: We saw the whole pipeline—now let’s see how it actually starts.",
+        "Emphasize: This chat isn’t busywork—it defines EVERYTHING that follows.",
+        "Make it relatable: Like a Hollywood pitch meeting you can’t skip.",
+        "Reinforce: Only when this is on lock do the next agents have a clue."
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 7."
+      "transition_out": "With our premise boxed up and ready to go, the logical next stop is seeing how those story basics get shaped into an actual backbone—the story arc. Let’s see how the pipeline wrangles all those ideas into a coherent journey."
     },
     {
       "slide_number": 7,
       "title_guess": "Premise.json",
-      "summary": "Premise.json",
+      "summary": "This slide showcases an example of the structured output file—premise.json—produced by the Premise Agent at the initial stage of the screenplay workflow. It provides a concrete demonstration of the data collected, including project ID, title, logline, genre, and core themes. The JSON snippet illustrates how creative inputs and essential metadata are captured in a machine-readable format, serving as the foundation for all subsequent screenplay generation steps.",
       "bullet_points": [
-        "Premise.json"
+        "Example of premise.json file generated by AI agent",
+        "Includes title, logline, genres, and themes",
+        "Structured format for downstream use"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold purple header ('Premise.json') at top center",
+        "Screenshot of a JSON file with syntax highlighting on black background",
+        "Key fields highlighted (project_id, title, logline, genre, themes)",
+        "Simple, clean layout with strong focus on JSON example"
       ],
       "key_concepts": [
-        "Premise.json"
+        "premise.json",
+        "Structured story premis",
+        "JSON data for AI",
+        "Logline and genre tagging"
       ],
       "carryover_concepts": [
         "Premise Agent",
-        "A chat agent that discusses with you what your"
+        "Hierarchical structure",
+        "Screenplay flow"
       ],
-      "relation_to_previous": "Having developed «Premise Agent», we now layer in Premise.json so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Premise.json with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Premise.json» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Premise.json as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "Another way to say the same tension: we’re trying to make «Premise.json» actionable. That means turning Premise.json into something you could actually implement. I’m not going to read the slide line by line — I’m going to tell you what matters for coherence and why instructors put this block here.",
+      "relation_to_previous": "Earlier, the Premise Agent was introduced as an interactive AI that collaborates with users to develop a movie's foundational concept, generating a premise.json file as output. This slide makes concrete what that output looks like by displaying an example JSON artifact, providing a tangible reference for what information must be captured before further generation stages can proceed.",
+      "pedagogical_role": "walkthrough_example",
+      "what_this_slide_adds": "It reveals the actual contents and structure of a premise.json file, turning the abstract description of the previous slide into a visible, practical example.",
+      "likely_pedagogical_purpose": "Show real data artifact produced in initial planning",
+      "teaching_goal": "Students should recognize how the premise.json file captures all the creative DNA and critical metadata the pipeline needs to start producing a screenplay that stays on track.",
+      "likely_confusion_point": "Thinking premise.json is just a plot summary, not a structured data blueprint for downstream AI.",
+      "intuitive_hook": "It’s like the ultimate movie elevator pitch, but souped up as a data file your robot screenwriter can actually use.",
+      "takeaway": "A well-formed premise.json is the foundation—if your core story isn’t captured here, everything else downstream falls apart.",
+      "target_word_count": 155,
+      "narration": "So after all that chat about needing proper scaffolding for an AI movie pipeline, here’s where the rubber meets the road: the actual artifact, the famous premise.json file. Instead of just tossing random story notes in a Google Doc, you’ve got this super-organized data file—think of it as your digital elevator pitch, on steroids. What’s wild is, this isn’t just a loose blurb; every key detail—title, logline, genre tags, big themes—is locked into a structure the AI can reliably build on. The logline sets the stakes. Genres? Now your robot isn’t about to write a horror-comedy-musical by accident. And tagging the core themes makes sure your ‘hero’s journey’ stays, well, heroic, not, like, suddenly about taxes. People sometimes miss this and assume it’s just a plot teaser, but it’s really the DNA for everything. Miss a section, and the whole system wobbles. So, take a close look: this is where every good script robot starts.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Show how fields like themes and genre are more than decoration—they guide all later AI steps.",
+        "Emphasize that structure—not just the story—prevents chaos.",
+        "Relate back to the pipeline: every agent down the line depends on this foundation."
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 8."
+      "transition_out": "With our premise locked and loaded in this neat little data bundle, the pipeline can finally take these basics and start shaping a real story arc. Let’s see what happens when the AI turns these notes into a backbone for the whole movie."
     },
     {
       "slide_number": 8,
       "title_guess": "Premise.json",
-      "summary": "Premise.json",
+      "summary": "This slide expands on the earlier premise.json preview by displaying additional contents of the file, focusing on narrative-critical details. The JSON excerpt shows structured fields like central conflict, setting (with time period and locations), and protagonist characterization, making explicit how story logic and environment are encoded in the foundational data document for downstream use. The details signal the expectation for rich, layered inputs before further screenplay generation occurs.",
       "bullet_points": [
-        "Premise.json"
+        "Central conflict description in JSON",
+        "Detailed setting with primary time and places",
+        "List of protagonists and their goals"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold blue 'Premise.json' heading centered at top",
+        "Extended JSON code snippet on a black background with syntax highlighting",
+        "Highlighted fields: central_conflict, setting, protagonists"
       ],
       "key_concepts": [
-        "Premise.json"
+        "Central conflict encoding",
+        "Setting and environment structuring",
+        "Protagonist goal formalization"
       ],
       "carryover_concepts": [
-        "Premise.json"
+        "premise.json",
+        "Structured story premis"
       ],
-      "relation_to_previous": "Having developed «Premise.json», we now layer in Premise.json so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Premise.json with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Premise.json» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Premise.json as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "From here, think about what you’d *test* if you were peer-reviewing a generated screenplay. Premise.json is basically the checklist for that review: Premise.json. The through-line from earlier slides is that decomposition buys you inspectable pieces; this slide names what those pieces should contain.",
+      "relation_to_previous": "Previously, an example of a premise.json file was introduced, showing the top-level metadata like title, logline, genres, and themes. This slide reveals additional, deeper narrative components—central conflict, detailed setting, and protagonist breakdown—demonstrating the full depth of information the AI system will need to carry forward for robust downstream storytelling. By surfacing these fields, it underscores the critical input requirements for subsequent hierarchical generation.",
+      "pedagogical_role": "walkthrough_example",
+      "what_this_slide_adds": "It exposes further narrative structure fields—such as protagonist specifics and world-building elements—inside premise.json, clarifying how both story and setting must be specified in machine-readable form.",
+      "likely_pedagogical_purpose": "Show depth and narrative richness in AI input artifacts",
+      "teaching_goal": "Show how rich, structured narrative details—conflict, world, protagonist motivations—become required, machine-readable input for coherent AI screenwriting.",
+      "likely_confusion_point": "Students may think a title and logline alone are enough for proper story generation.",
+      "intuitive_hook": "Think of this like a video game character builder: skipping the background lore and map setup leaves your AI totally lost in its own world.",
+      "takeaway": "Without fully detailing conflict, setting, and character wants in the premise.json, every downstream story step falls apart.",
+      "target_word_count": 170,
+      "narration": "You saw earlier how our premise.json starts off with flashy stuff—title, logline, big theme tags—basically the movie’s Tinder bio. But here’s the meat: if you want your robot screenwriter to actually build a world and keep its characters straight, you’ve gotta spell out what’s actually at stake, when and where it’s all happening, and what the hero is desperately trying to do. Check out these highlighted bits: the central conflict is made super clear, so the entire pipeline knows what battle’s being fought, not just some vague vibes. The setting isn’t ‘some castle somewhere’—it’s locked in, with dates and GPS points so nothing gets weirdly teleported. Every protagonist? They get a goal and a reason to care, right in the data. Skip this, and every scene downstream gets that ‘it’s always sunny in vague-land’ problem. This slide’s your proof: AI needs fully loaded, crystal-clear blueprints, not just story snacks. Keep this structure in mind, because without it, the rest of the pipeline may as well be improv theater.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Emphasize why you need deep, layered input before writing scenes",
+        "Joke that ‘wishy-washy’ input leads to nonsense later",
+        "Explain how specifying time, place, and goals prevents the AI from losing the plot",
+        "Echo the idea that robots need more than just a ‘cool idea’ to write something coherent"
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 9."
+      "transition_out": "Next, we’ll see how these rich foundation details get leveraged to plot out the bigger journey—the story arc. Because once you’ve built the world and planted your hero, it’s time to put them through the wringer."
     },
     {
       "slide_number": 9,
       "title_guess": "Premise.json",
-      "summary": "Premise.json",
+      "summary": "This slide displays a further segment of the premise.json file, highlighting how protagonists, antagonists, key allies, and narrative stakes are encoded in structured JSON. The examples specify names, roles, and driving motivations for the principal characters, as well as the overarching stakes of the story. By showing detailed, narrative-rich entries for each key figure, the slide illustrates how character motivations and high-consequence stakes become computable foundations for later AI-driven storytelling steps.",
       "bullet_points": [
-        "Premise.json"
+        "Protagonists' names, roles, and motivations in JSON",
+        "Key antagonist and their goal encoded",
+        "Key ally's characteristics listed",
+        "Stakes of the narrative explicitly stated"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold blue title centered at the top ('Premise.json')",
+        "Prominent black code block with color-coded syntax highlighting",
+        "JSON fields: protagonists, key_antagonist, key_ally, stakes"
       ],
       "key_concepts": [
-        "Premise.json"
+        "Character structuring in JSON",
+        "Motivation encoding",
+        "Stakes articulation",
+        "Computable narrative roles"
       ],
       "carryover_concepts": [
-        "Premise.json"
+        "premise.json",
+        "Protagonist goal formalization",
+        "Central conflict encoding"
       ],
-      "relation_to_previous": "Having developed «Premise.json», we now layer in Premise.json so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Premise.json with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Premise.json» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Premise.json as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "So zoom in with me on Premise.json. The add here is: Develops the thread around Premise.json with concrete detail from the deck.. What students often miss is that the hard part isn’t prompting once — it’s keeping later sections from drifting. We’ll keep returning to that as we add agents.",
+      "relation_to_previous": "The previous slide revealed that premise.json captures the central conflict, detailed setting, and a list of protagonists with their goals. This slide expands the scope by demonstrating how the file encodes not only the protagonists' details but also the main antagonist, a key ally, and the narrative stakes. It deepens the depiction of how rich character data and high-level consequences are structured for downstream AI screenplay generation.",
+      "pedagogical_role": "walkthrough_example",
+      "what_this_slide_adds": "It introduces the explicit structuring of protagonists, antagonists, key allies, and narrative stakes within the premise.json, offering a more holistic and computable basis for story logic.",
+      "likely_pedagogical_purpose": "Show comprehensive character and stakes modeling in AI input",
+      "teaching_goal": "Make students recognize that character motivations and stakes—fully spelled out in structured data—form the backbone for coherent, computable storytelling in a hierarchical agent pipeline.",
+      "likely_confusion_point": "Thinking the AI just needs character names or vibes, not their wants and explicit stakes.",
+      "intuitive_hook": "Imagine trying to direct a play where every actor just improvises with zero motivation—pure chaos.",
+      "takeaway": "Robust AI storytelling only works when motivations, roles, and stakes are meticulously locked in as data—otherwise, the whole pipeline derails.",
+      "target_word_count": 160,
+      "narration": "Let’s zoom in! You’ve seen how a premise has to include more than just 'the hero saves the day'—now check this out: the entire core cast gets their mission spelled out, in digital stone. Why does this matter? Well, if your AI’s going to write an epic, it needs to operate like a hyper-literal director: Link isn’t just 'the good guy'—he has a job, a reason, and a very explicit frog-to-princess trajectory. Aghanim? Not just 'evil', but trying to unleash Ganon with a concrete plan. Even the wise mentor gets their own wants, not just Gandalfing in from stage left. And those stakes at the bottom? That’s your global 'doom counter', reminding the pipeline why everything matters. Miss this structure, and characters just become NPCs wandering without a quest, and the story’s stakes? Zero. So if you want your AI’s next blockbuster to make any sense, you’ve gotta lock in the who, the what, and the why right here.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Connect character motivations to story coherence",
+        "Highlight why allies and antagonists also need concrete wants",
+        "Relate data structure to AI's ability to plan scenes",
+        "Reinforce consequences if stakes aren’t clear"
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 10."
+      "transition_out": "With every character’s goal nailed in the premise, it’s finally possible for the arc-building agent to chart a journey that actually tests those wants—so, let’s check out how that backbone comes together in the next pipeline step."
     },
     {
       "slide_number": 10,
       "title_guess": "Arc Agent",
-      "summary": "Arc Agent\n• A chat agent that discusses your movie story arc\n– Arc consists of multiple acts\n– Agent takes premise.json as input for context\n• You tell the agent what happens in each act, then \nask it to draft the act, one at time\n• Premise file gives it context for the story arc\n• This agent then creates a file arc.json",
+      "summary": "This slide introduces the Arc Agent—an AI chat assistant designed to help users flesh out the story arc of their movie. The agent operates by taking the structured output from the premise.json file as initial context. Users iteratively describe what happens in each act, with the agent assisting in drafting each act one at a time, ultimately creating a comprehensive arc.json file representing the high-level plot structure.",
       "bullet_points": [
-        "Arc Agent",
-        "• A chat agent that discusses your movie story arc",
-        "– Arc consists of multiple acts",
-        "– Agent takes premise.json as input for context",
-        "• You tell the agent what happens in each act, then",
-        "ask it to draft the act, one at time",
-        "• Premise file gives it context for the story arc",
-        "• This agent then creates a file arc.json"
-      ],
-      "visual_elements": [
-        "Slide layout from PDF/image"
-      ],
-      "key_concepts": [
-        "Arc Agent",
         "A chat agent that discusses your movie story arc",
         "Arc consists of multiple acts",
         "Agent takes premise.json as input for context",
-        "You tell the agent what happens in each act, then"
+        "You tell the agent what happens in each act, then ask it to draft the act, one at time",
+        "Premise file gives it context for the story arc",
+        "This agent then creates a file arc.json"
+      ],
+      "visual_elements": [
+        "Large bold blue heading ('Arc Agent') at top center",
+        "Indented bulleted list, some lines bolded for emphasis",
+        "Small robot image in upper right corner (A.W.E.S.O.M.-O)",
+        "Simple, clean layout; no diagrams"
+      ],
+      "key_concepts": [
+        "Arc Agent",
+        "Interactive act drafting",
+        "premise.json as input",
+        "arc.json as output"
       ],
       "carryover_concepts": [
-        "Premise.json"
+        "premise.json",
+        "Hierarchical screenplay flow"
       ],
-      "relation_to_previous": "Having developed «Premise.json», we now layer in Arc Agent so students see how the argument advances rather than repeating the same claim.",
+      "relation_to_previous": "Prior slides detailed how premise.json encodes foundational story elements and presented its data structure. This slide shifts the focus to the next phase—the high-level story arc—showing how the structured premise feeds directly into the Arc Agent's workflow. The transition illustrates the move from raw story concept into organized plot design, defining a collaborative draft process that further scaffolds narrative complexity.",
       "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Arc Agent with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Arc Agent» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Arc Agent as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "Let me connect this to Premise.json. The move on this part of the deck is to pressure-test the idea that «Arc Agent» stands alone — it doesn’t; it sits in a bigger story about structure. In practical terms: Develops the thread around Arc Agent with concrete detail from the deck.. I want you to hear the mechanism, not memorize a bullet list.",
+      "what_this_slide_adds": "It introduces a new conversational agent dedicated to building the high-level story arc, describing its iterative and structured interaction with users and clarifying its dependency on the premise.json file.",
+      "likely_pedagogical_purpose": "Show next workflow stage and user interaction with arc planning",
+      "teaching_goal": "Make students understand that the Arc Agent collaboratively builds the high-level story arc—using the structured premise.json as its guide, crafting each act step by step into a coherent arc.json.",
+      "likely_confusion_point": "Assuming the Arc Agent invents the plot alone—it actually needs back-and-forth guidance for each act.",
+      "intuitive_hook": "Think of the Arc Agent as your screenplay co-pilot, shaping plot structure with you and never flying blind.",
+      "takeaway": "The Arc Agent turns your premise blueprint into a structured journey, acting as both co-writer and quality control for the overarching plot.",
+      "target_word_count": 155,
+      "narration": "Building straight from our premise foundation, let’s talk about giving your movie an actual spine—the story arc! Here’s where our next robot buddy, the Arc Agent, clocks in. It’s basically like pinging a super-organized friend who lives and breathes story beats. But, and this is crucial: it doesn’t just cook up drama out of nowhere. The arc agent takes your premise.json—all those neatly organized ingredients about characters, stakes, and setting—and uses them as gospel. Then, act by act, you tag-team with it: describe what’s supposed to go down, feed your ideas in chunks, and let the agent draft each act, one at a time. The magic here is you keep things on track—no surprise genre-shifts or lost storylines because every move is grounded in that premise. When you’re done? Out pops a shiny arc.json: your plot’s master flight plan. Keep in mind—this isn’t a one-shot; it’s a dialogue, and your AI wingman’s got your back.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Explain why the arc needs that detailed premise.json for context",
+        "Use the co-pilot analogy—arc agent isn't writing alone",
+        "Emphasize this act-by-act drafting, not a single monologue",
+        "Remind: the output is a structured arc.json, which locks narrative direction"
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 11."
+      "transition_out": "With our story arc mapped and every act outlined, the next stage is zooming further in: breaking big beats into fully detailed sequences. Let’s see how the pipeline keeps the plot moving—one level deeper."
     },
     {
       "slide_number": 11,
       "title_guess": "Arc.json",
-      "summary": "Arc.json",
+      "summary": "This slide presents a concrete example of the arc.json file produced by the Arc Agent, visualizing the structured, narrative-rich data that represents an entire act of a screenplay. The content demonstrates how arc-level story design is encoded, including the act number, label, dramatic questions, detailed summaries, turning points, and a sequence of 'must-hit beats.' The example illustrates the level of narrative abstraction and granularity required before moving on to more detailed sequence or scene generation.",
       "bullet_points": [
-        "Arc.json"
+        "Structured arc.json file for a screenplay act",
+        "Fields: act number, label, length note, dramatic question, summary",
+        "Critical story elements: turning point, must-hit beats, act climax",
+        "Detailed text for narrative planning"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large blue bold title ('Arc.json') centered at top",
+        "Full-screen highlighted JSON code block with syntax coloring on black background",
+        "Prominent field labels and multiline narrative entries"
       ],
       "key_concepts": [
-        "Arc.json"
+        "arc.json",
+        "Story arc encoding",
+        "Turning point",
+        "Must-hit beats"
       ],
       "carryover_concepts": [
         "Arc Agent",
-        "A chat agent that discusses your movie story arc"
+        "Hierarchical screenplay flow",
+        "premise.json as context"
       ],
-      "relation_to_previous": "Having developed «Arc Agent», we now layer in Arc.json so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Arc.json with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Arc.json» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Arc.json as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "If you’re tracking the arc of the lecture, this is where we tighten the screw: Arc.json. The intuition I’d give you first is that models are locally strong but globally sloppy unless we scaffold them. So here’s the content in spoken form: Arc.json. Hold onto that because we’ll reuse it when we wire agents together.",
+      "relation_to_previous": "Previously, the Arc Agent was introduced as an interactive system for constructing a movie's story arc, using premise.json as foundational context. This slide now reveals a detailed example of the arc.json output created by the agent, making explicit what an act-level narrative structure looks like in data form. This transition is essential for showing how high-level story planning is formalized for downstream sequence and scene generation.",
+      "pedagogical_role": "walkthrough_example",
+      "what_this_slide_adds": "It provides a real, narrative-rich example of an arc.json file, clarifying exactly how act structure, dramatic questions, and key plot beats are captured for further AI-driven development.",
+      "likely_pedagogical_purpose": "Show real data artifact for story arc stage",
+      "teaching_goal": "Help students visualize how an AI formalizes a full movie act into structured data—the arc.json file—so downstream agents can write detailed sequences and scenes that stay on track.",
+      "likely_confusion_point": "Thinking this is just an outline, not a deeply narrative, machine-legible plan.",
+      "intuitive_hook": "It’s like the detailed itinerary you’d hand a film crew—not just a sticky note saying ‘something dramatic happens here.’",
+      "takeaway": "Every act becomes crystal-clear instructions in arc.json, making sure the plot can’t drift because the next agents have a precise roadmap.",
+      "target_word_count": 170,
+      "narration": "Okay, so you just saw how our Arc Agent doesn’t freestyle the story—it lays out the plot spine using all that rich detail from the premise, like a showrunner with OCD and a color-coded binder. But, uh, seeing is believing, right? What we're staring at here is the arc.json: an act, mapped as data, but written like movie trailer copy. You don’t just get a generic outline. Each act has its epic label, a burning dramatic question—think, 'Can Link save Zelda before Ganon ruins brunch?'—and then, crucially, big blocks of story: summaries, step-by-step must-hit beats, turning points, and even the gut-punch cliffhanger to end it all. Look at those beats—they're literally GPS coordinates for the rest of the pipeline. If you tried to just use vibes and text blobs here, downstream agents would wander off into dreamland. This is what keeps every scene on target. When people assume it's just an outline, they miss how dense and specific this blueprint is. The big idea? Structure stories like this, and the pipeline’s next stage can’t get lost—even if the plot throws curveballs.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Bridge from premise.json to arc.json—why add this structural layer?",
+        "Show how narrative gets locked into fields, not just free text.",
+        "Highlight must-hit beats as real, actionable instructions.",
+        "Address misconception: not a loose outline; this is deep, operational planning."
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 12."
+      "transition_out": "With this level of structure, it’s finally safe to zoom in further—each beat here will fuel a whole sequence in the next stage. Let’s see how the pipeline uses these to go from the skeleton to actual moving parts."
     },
     {
       "slide_number": 12,
       "title_guess": "Sequence Agent",
-      "summary": "Sequence Agent\n• An automated agent (no chat) that writes the \nsequences of the movie for each act\n• Inputs per sequence\n– Premise.json, arc.json – give agent global view of the movie\n– All previous sequences generated so far – give agent local context \nfor what should happen next\n•\nPrimary sequence elements\n– Goal – what is the narrative purpose of this sequence\n– Key locations – locations in the sequence\n– Exit beat – how the sequence ends and transitions to next sequence\n• This agent then cre",
+      "summary": "This slide introduces the Sequence Agent—an automated (non-interactive) system responsible for generating the sequences that compose each act of the movie. The agent operates using both the global narrative structure (premise.json and arc.json) and the local context provided by previously written sequences, ensuring story coherence and progression. It focuses on constructing sequence-level elements like narrative goals, principal locations, and the 'exit beat' that enables smooth transitions between sequences. The agent outputs its work as a structured sequence.json file.",
       "bullet_points": [
-        "Sequence Agent",
-        "• An automated agent (no chat) that writes the",
-        "sequences of the movie for each act",
-        "• Inputs per sequence",
-        "– Premise.json, arc.json – give agent global view of the movie",
-        "– All previous sequences generated so far – give agent local context",
-        "for what should happen next",
-        "•"
+        "Automated agent (no chat) writes movie sequences per act",
+        "Inputs: premise.json, arc.json (global context); all previous sequences for local context",
+        "Primary elements: sequence goal, key locations, exit beat",
+        "Outputs a sequence.json file"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold blue heading ('Sequence Agent') centered at top",
+        "Black bullet points for main ideas",
+        "Indented sub-bullets for input types and sequence elements",
+        "Key terms in bold for emphasis",
+        "Small robot image in top right corner"
       ],
       "key_concepts": [
         "Sequence Agent",
-        "An automated agent (no chat) that writes the",
-        "sequences of the movie for each act",
-        "Inputs per sequence",
-        "Premise.json, arc.json – give agent global view of the movie"
+        "Automated generation (no chat)",
+        "Sequence-level narrative structure",
+        "sequence.json output"
       ],
       "carryover_concepts": [
-        "Arc.json"
+        "arc.json",
+        "premise.json",
+        "Hierarchical screenplay flow"
       ],
-      "relation_to_previous": "Having developed «Arc.json», we now layer in Sequence Agent so students see how the argument advances rather than repeating the same claim.",
+      "relation_to_previous": "Slide 11 gave a detailed view of the arc.json file, showing how act-level structure and narrative beats are encoded. Now, the focus narrows to the next layer of the screenplay hierarchy: the creation of detailed sequences within each act. This move demonstrates how the outputs of previous agents (premise and arc) underpin and direct this subsequent automated process, advancing the granular buildup of the movie.",
       "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Sequence Agent with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Sequence Agent» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Sequence Agent as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "Another way to say the same tension: we’re trying to make «Sequence Agent» actionable. That means turning Sequence Agent, An automated agent (no chat) that writes the, sequences of the movie for each act into something you could actually implement. I’m not going to read the slide line by line — I’m going to tell you what matters for coherence and why instructors put this block here.",
+      "what_this_slide_adds": "It introduces a new, fully automated agent for writing individual story sequences, explaining its input requirements, design logic, and new output artifact (sequence.json).",
+      "likely_pedagogical_purpose": "Describe automated sequence generation process",
+      "teaching_goal": "Understand what the Sequence Agent does and how it keeps the plot moving smoothly between acts using structured, automated generation.",
+      "likely_confusion_point": "Thinking the Sequence Agent is just spitballing random scenes instead of following a structured, context-aware plan.",
+      "intuitive_hook": "It’s like passing the baton in a relay race—each sequence knows exactly where to start and finish, so nobody drops the story.",
+      "takeaway": "The Sequence Agent takes the plan from the arc and premise, breaks each act into concrete, purposeful chunks, and hands off a clear, machine-readable map for the next stage.",
+      "target_word_count": 160,
+      "narration": "Alright, now we’re diving one level deeper—so after the arc is mapped and all the big, trailer-worthy moments are locked in, who actually fills in the meat of each act? Enter: the Sequence Agent! Think of this one like your group project partner who doesn’t argue, doesn’t wait for feedback—just quietly cranks out well-structured content as soon as the plan lands on their desk. What’s cool is, this isn’t just spitballing; it takes the global bird’s-eye from the premise and arc, then checks what’s already been written, so every new sequence feels like the next logical step, not a random plot detour. The Sequence Agent is super strict about structure: it defines a specific goal (what needs to happen in this chunk), notes the major locations, and—get this—always tacks on an “exit beat” so the story flows forward cleanly, no matter where you pick it up. That output, the sequence.json, is like the next blueprint the pipeline needs to build credible, escalating drama, on autopilot.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Relate Sequence Agent to assembly line—continuity, not chaos.",
+        "Emphasize automated: no chat, just outputs structure.",
+        "Name inputs: premise.json, arc.json, previous sequences.",
+        "Connect 'exit beat' to keeping narrative momentum."
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 13."
+      "transition_out": "With sequences now locked in like the links of a chain, we’re ready to zoom down one last layer—where the real dialogue and action lives: the scene agent. Let’s check out how those sequence blueprints get turned into movie magic, moment by moment."
     },
     {
       "slide_number": 13,
       "title_guess": "Sequence.json",
-      "summary": "Sequence.json",
+      "summary": "This slide presents a real example of the sequence.json file generated by the Sequence Agent during screenplay creation. The example details the fields used to structure each narrative sequence, such as sequence ID, title, act number, narrative goal, emotional tone, key locations, and exit beat. The content demonstrates how a segment of the movie is transformed into machine-readable data for further automated development. This concrete artifact illustrates the transition from act-level planning to sequence-level organization within the AI workflow.",
       "bullet_points": [
-        "Sequence.json"
+        "Example structure of sequence.json output",
+        "Includes sequence ID, title, and act association",
+        "Specifies narrative goal and emotional tone",
+        "Lists key locations for the sequence",
+        "Defines the exit beat for transition"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold blue title ('Sequence.json') at top center",
+        "Code snippet screenshot: JSON with syntax highlighting on black background",
+        "Highlighted fields: project_id, sequences, id, title, act, goal, emotional_tone, key_locations, exit_beat",
+        "Centered slide composition, strong visual focus on the JSON example"
       ],
       "key_concepts": [
-        "Sequence.json"
+        "sequence.json",
+        "Sequence-level structuring",
+        "Narrative goal encoding",
+        "Emotional tone and exit beat"
       ],
       "carryover_concepts": [
         "Sequence Agent",
-        "An automated agent (no chat) that writes the"
+        "Automated sequence generation",
+        "Arc and premise context"
       ],
-      "relation_to_previous": "Having developed «Sequence Agent», we now layer in Sequence.json so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Sequence.json with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Sequence.json» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Sequence.json as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "From here, think about what you’d *test* if you were peer-reviewing a generated screenplay. Sequence.json is basically the checklist for that review: Sequence.json. The through-line from earlier slides is that decomposition buys you inspectable pieces; this slide names what those pieces should contain.",
+      "relation_to_previous": "The prior slide explained the purpose and logic of the Sequence Agent, emphasizing its automated nature and its reliance on both global (premise, arc) and local context to generate rich sequence structures. Now, the process is made tangible with a detailed example artifact, showing how narrative and structural elements are formalized within a sequence.json file. This step is crucial for understanding exactly what downstream units the Sequence Agent produces and how granular story elements are captured.",
+      "pedagogical_role": "walkthrough_example",
+      "what_this_slide_adds": "It provides a fully worked example of a sequence.json file, clarifying how individual sequence data is structured for AI-driven screenplay development.",
+      "likely_pedagogical_purpose": "Show real data artifact for sequence generation",
+      "teaching_goal": "Demystify how an abstract act breakdown becomes a set of precise, machine-readable narrative chunks—the structured building blocks for the next layer of screenplay automation.",
+      "likely_confusion_point": "Thinking that sequence.json is just a plot summary or outline instead of a structured, action-ready data scaffold.",
+      "intuitive_hook": "Picture this like episode planning for a Netflix show—every sequence gets its own mini-mission, vibe, and destination.",
+      "takeaway": "A sequence.json isn’t just a text outline—it hard-codes narrative purpose, mood, locations, and hand-off points so downstream agents know exactly what storytelling job to do next.",
+      "target_word_count": 180,
+      "narration": "Check this out—here’s the leap from ‘big-picture planning’ to actual narrative bricks your AI can stack. Each chunk in this sequence.json? It’s less ‘vibe check’ and more ‘mission file’: which part of the adventure we’re on, what emotional beat dominates, where it all happens, and critically, what has to be true at the end for the story to roll forward. If you’ve ever made a video game quest or mapped out a D&D campaign, you get it—this isn’t just a summary; it gives marching orders, complete with mood and location stamps. So when the pipeline says, ‘Write Sequence 2,’ the AI knows the goal (say, get Link out of bed and into epic-hero mode), the required settings, and how to tee up the next twist. This level of structure makes your story flow like a playlist—no dropped plotlines, no sudden tone whiplash. Remember: good sequences mean downstream scenes don’t wander off the rails.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Highlight the structured—NOT just descriptive—nature of sequence.json",
+        "Use the Netflix episode/quest analogy for clarity",
+        "Point out how each field (goal, tone, exit beat) locks in purpose",
+        "Reassure: this prevents chaos and wandering scenes downstream"
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 14."
+      "transition_out": "Once your sequences are set up like perfect dominoes, it’s time to zoom to the most granular level—handling scene-by-scene action and dialogue. Ready to see how all this sequence data gets spun into movie moments? Let’s meet the Scene Agent."
     },
     {
       "slide_number": 14,
       "title_guess": "Scene Agent",
-      "summary": "Scene Agent\n• An automated agent (no chat) that writes the scenes \nof the movie for each sequence\n• Inputs per sequence\n– Premise.json, arc.json, sequence.json – give agent global view of \nthe movie\n– All scenes generated so far in this sequence and the previous \nsequence – give agent local context for what should happen next\n•\nPrimary scene elements\n– Slug line – location of the scene\n– Blocks – series of actions and dialogues in the scene\n• This agent then creates a file scenes.json",
+      "summary": "This slide introduces the Scene Agent, an automated (non-interactive) system responsible for generating the individual scenes of a movie, sequence by sequence. The agent uses structured context files—premise.json, arc.json, sequence.json—for global narrative awareness, and also aggregates all previously generated scenes for local continuity. Each scene is constructed with specific elements: a slug line specifying location and 'blocks' representing actions and dialogue. The agent produces its output in the form of a scenes.json file.",
       "bullet_points": [
-        "Scene Agent",
-        "• An automated agent (no chat) that writes the scenes",
-        "of the movie for each sequence",
-        "• Inputs per sequence",
-        "– Premise.json, arc.json, sequence.json – give agent global view of",
-        "the movie",
-        "– All scenes generated so far in this sequence and the previous",
-        "sequence – give agent local context for what should happen next"
+        "Automated agent (no chat) writes movie scenes for each sequence",
+        "Inputs: premise.json, arc.json, sequence.json (global context); all prior scenes (local context)",
+        "Scene structure: slug line (location), action/dialogue blocks",
+        "Outputs scenes.json file"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold blue heading ('Scene Agent') centered at top",
+        "Standard black bullet points, some with sub-bullets in smaller font",
+        "Key inputs and outputs bolded within text",
+        "Small robot image in upper right corner (A.W.E.S.O.M.-O)",
+        "Simple, clear layout with left-aligned bullets"
       ],
       "key_concepts": [
         "Scene Agent",
-        "An automated agent (no chat) that writes the scenes",
-        "of the movie for each sequence",
-        "Inputs per sequence",
-        "Premise.json, arc.json, sequence.json – give agent global view of"
+        "Automated scene writing",
+        "Scene structure (slug line, action/dialogue blocks)",
+        "scenes.json output"
       ],
       "carryover_concepts": [
-        "Sequence.json"
+        "sequence.json",
+        "premise.json",
+        "arc.json"
       ],
-      "relation_to_previous": "Having developed «Sequence.json», we now layer in Scene Agent so students see how the argument advances rather than repeating the same claim.",
+      "relation_to_previous": "The previous slide provided a concrete example of a sequence.json file, demonstrating how a movie sequence is encoded for downstream development. This slide takes the next logical step, describing how scenes—each a fundamental building block of a sequence—are automatically generated by a dedicated agent. The transition is necessary to show how detailed storytelling is achieved within the established hierarchical structure, using outputs from earlier stages.",
       "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Scene Agent with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Scene Agent» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Scene Agent as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "So zoom in with me on Scene Agent. The add here is: Develops the thread around Scene Agent with concrete detail from the deck.. What students often miss is that the hard part isn’t prompting once — it’s keeping later sections from drifting. We’ll keep returning to that as we add agents.",
+      "what_this_slide_adds": "It explains the automated methodology for scene generation, specifying agent inputs, the scene data model, and the resulting output file, scenes.json.",
+      "likely_pedagogical_purpose": "Describe automated scene writing workflow",
+      "teaching_goal": "Help students grasp how the Scene Agent uses structured context to automatically generate the actual scenes of a screenplay—turning those planning files into moment-by-moment story.",
+      "likely_confusion_point": "Thinking the Scene Agent just makes up scenes without referencing previous context—missing its structured, memory-driven process.",
+      "intuitive_hook": "Picture the Scene Agent as a robot playwright who reads the entire script-so-far before writing the next scene.",
+      "takeaway": "The Scene Agent glues all your careful planning into real, ordered scenes—using every context file and past scene so the story flows like a movie, not a random TikTok feed.",
+      "target_word_count": 170,
+      "narration": "Imagine you’re running a relay: everyone’s handed off their baton—premise, arc, sequence, all those lovely blueprints—and now it’s finally the last stretch. This is where our Scene Agent robot rolls in, and honestly, it’s kind of like the most detail-oriented playwright on autopilot. No chat, no check-ins—just takes EVERYTHING: your premise, the arc, which chunk of the story we’re in (from your sequence.json), and also a big scroll of all previous scenes so it doesn’t forget who’s in the room or if the hero’s already lost their sword. What’s wild is it builds each scene in these neat little units—first a slug line (so you know, INT. HOGWARTS GREAT HALL—NIGHT), then blocks out the action and dialogue in an order the movie would actually play. And the best part? It bundles every finished scene into scenes.json—a clean, modular package ready for the next agent, or for you to actually read. So, if you ever wondered how to keep the action straight and never have a character teleport mid-conversation, this is your secret weapon.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Relate back to sequence-to-scene handoff—pipeline logic",
+        "Draw analogy to robots reading previous script pages before writing",
+        "Highlight use of both global planning files and local scene continuity",
+        "Emphasize that everything goes into a scenes.json at this stage"
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 15."
+      "transition_out": "So, with all your scenes neatly in a row, you’ve got a full, structured screenplay draft—but, yeah, what if that first draft is a little rough? Up next, let’s talk about how you can actually polish and upgrade these outputs using enhancement agents."
     },
     {
       "slide_number": 15,
       "title_guess": "Scenes.json",
-      "summary": "Scenes.json",
+      "summary": "This slide presents a concrete example of the scenes.json file produced by the Scene Agent. It showcases how individual scenes are structured in detailed, machine-readable format, including unique scene and sequence identifiers, a descriptive slug line, and an array of scene 'blocks' containing both action and dialogue elements. The example demonstrates the level of granularity and narrative fidelity the agent achieves at the scene-writing stage.",
       "bullet_points": [
-        "Scenes.json"
+        "Example structure of scenes.json output",
+        "Fields shown: id, slug_id, slugline, sequence_id",
+        "Scene composed of blocks: action and dialogue",
+        "Dialogue entries include speaker and lines"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold blue heading ('Scenes.json') centered at the top",
+        "Black code block with color-coded syntax highlighting for JSON",
+        "Scene 'blocks' alternating action and dialogue entries",
+        "Multiline dialogue/narration within code"
       ],
       "key_concepts": [
-        "Scenes.json"
+        "scenes.json",
+        "Scene block structure",
+        "Action/dialogue modeling",
+        "Slug line formatting"
       ],
       "carryover_concepts": [
         "Scene Agent",
-        "An automated agent (no chat) that writes the scenes"
+        "Scene structure (slug line, action/dialogue blocks)",
+        "sequence.json"
       ],
-      "relation_to_previous": "Having developed «Scene Agent», we now layer in Scenes.json so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Scenes.json with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Scenes.json» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Scenes.json as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "Let me connect this to Scene Agent. The move on this part of the deck is to pressure-test the idea that «Scenes.json» stands alone — it doesn’t; it sits in a bigger story about structure. In practical terms: Develops the thread around Scenes.json with concrete detail from the deck.. I want you to hear the mechanism, not memorize a bullet list.",
+      "relation_to_previous": "The previous slide introduced the Scene Agent and explained its inputs and outputs for automatically authoring detailed movie scenes. Now, the process is concretized with an actual example of the scenes.json file, making the output data structure and its narrative and technical elements fully visible. This reveal is essential for understanding how individual scenes are represented and used in the downstream AI workflow.",
+      "pedagogical_role": "walkthrough_example",
+      "what_this_slide_adds": "It visualizes the scenes.json artifact produced by the Scene Agent, illustrating how action and dialogue elements are captured per scene in structured data, making the abstract scene-writing methodology tangible.",
+      "likely_pedagogical_purpose": "Show real data artifact for scene-level generation",
+      "teaching_goal": "Demystify how individual movie scenes are structured and represented in AI pipelines using detailed, machine-readable data.",
+      "likely_confusion_point": "Assuming scenes.json is just a raw script dump, not a modular structure built for downstream processing.",
+      "intuitive_hook": "Think of scenes.json as a perfectly labeled LEGO kit, not a shoebox full of random blocks.",
+      "takeaway": "Each scene in an AI pipeline is built as a structured bundle—action and dialogue organized into modular blocks, ready to snap into any part of the screenplay.",
+      "target_word_count": 160,
+      "narration": "Alright, let’s go under the hood! Everything up until now—premises, arcs, sequences—has been ramping up to this: the ground-level, line-by-line machinery of movie magic. Here, you’re staring straight at scenes.json—the data backbone for every single moment on screen. This isn’t just a bucketful of dialogue and random action lines. Each entry in here is obsessively organized: you get a scene ID (so nothing ever gets lost), a slug like ‘INT. LINK’S HOME—NIGHT’—hello, instant shot list!—and then, the scene itself is split into clear blocks. Sometimes it’s action—who does what, how the light falls, even a character’s startled reaction. Sometimes it’s dialogue, fully labeled with who’s talking, what’s being said, even notes for the actor in parentheses if you want. Why bother with all this? Because this structure is what lets AI keep the whole movie straight—no more mixing up who’s speaking, or suddenly teleporting the action. It’s modular, mess-proof, and totally ready for editing, exporting, or even animation. So next time someone says, ‘AI can’t keep track of a real story,’ show them one of these.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Point out how 'block' structure prevents chaos in long scripts",
+        "Highlight the mix of action and dialogue, not just text dump",
+        "Compare scenes.json to building with pre-labeled LEGO sets",
+        "Reassure: it’s all about downstream flexibility and error-proofing"
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 16."
+      "transition_out": "Of course, even with all this structure, first drafts aren’t always Oscar-ready—so coming up, we’ll see how to tune and upgrade scenes using enhancement agents."
     },
     {
       "slide_number": 16,
       "title_guess": "Enhancement Agents",
-      "summary": "Enhancement Agents\n•\nWe can improve the agentic flow \nby using agents to enhance \nintermediate outputs\n– Write better sequences or scenes\n– Clean up the premise\n– Make the arc more creative",
+      "summary": "This slide introduces the concept of 'Enhancement Agents,' specialized agents tasked with improving intermediate outputs at each stage of the AI-driven screenplay workflow. It suggests that instead of a single-pass generation, separate agents can intervene to rewrite, polish, or creatively upgrade elements such as sequences, scenes, the premise, or the story arc. The visual and textual focus is on positioning enhancement as a modular process that can boost the quality, coherence, and creativity of content produced at various stages.",
       "bullet_points": [
-        "Enhancement Agents",
-        "•",
-        "We can improve the agentic flow",
-        "by using agents to enhance",
-        "intermediate outputs",
-        "– Write better sequences or scenes",
-        "– Clean up the premise",
-        "– Make the arc more creative"
+        "We can improve the agentic flow by using agents to enhance intermediate outputs",
+        "Write better sequences or scenes",
+        "Clean up the premise",
+        "Make the arc more creative"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold purple heading at top ('Enhancement Agents')",
+        "Illustration of a robot labeled 'Enhancement Agent' in the upper right quadrant",
+        "Previous flow diagram (Premise→Arc→Sequences→Scenes) at the bottom with enhancement agent icons over each stage",
+        "Bullet points in black, with main point bolded"
       ],
       "key_concepts": [
         "Enhancement Agents",
-        "We can improve the agentic flow",
-        "by using agents to enhance",
-        "intermediate outputs",
-        "Write better sequences or scenes"
+        "Intermediate output refinement",
+        "Agentic flow optimization",
+        "Stage-wise improvement"
       ],
       "carryover_concepts": [
-        "Scenes.json"
+        "Premise/arc/sequence/scene JSON outputs",
+        "Stage-wise screenplay generation"
       ],
-      "relation_to_previous": "Having developed «Scenes.json», we now layer in Enhancement Agents so students see how the argument advances rather than repeating the same claim.",
+      "relation_to_previous": "The last slide displayed actual output from the Scene Agent, completing the demonstration of how each agent produces structured artifacts at the scene level. Now, this slide pivots from showing baseline stage outputs to proposing how specialized enhancement agents can iteratively improve the quality and creativity of those intermediate results—addressing the natural shortcomings of first-draft, automated writing and pointing toward a more collaborative, iterative process.",
       "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Enhancement Agents with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Enhancement Agents» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Enhancement Agents as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "If you’re tracking the arc of the lecture, this is where we tighten the screw: Enhancement Agents. The intuition I’d give you first is that models are locally strong but globally sloppy unless we scaffold them. So here’s the content in spoken form: Enhancement Agents, We can improve the agentic flow, by using agents to enhance. Hold onto that because we’ll reuse it when we wire agents together.",
+      "what_this_slide_adds": "It introduces the explicit concept of enhancement agents, emphasizing their role in refining and upgrading outputs from earlier workflow stages, and visualizes how these agents can be applied at each point in the screenplay pipeline.",
+      "likely_pedagogical_purpose": "Show modular refinement using specialized agents",
+      "teaching_goal": "Students should grasp that enhancement agents can intervene at any stage of the screenplay pipeline to upgrade, rewrite, or polish outputs, leading to higher-quality and more coherent scripts.",
+      "likely_confusion_point": "Thinking each agent's output is final—forgetting that drafts can (and should) be refined iteratively.",
+      "intuitive_hook": "Like sending your essay to Grammarly, but for every level of your screenplay.",
+      "takeaway": "Enhancement agents give you modular, robot-powered 'editors' at every stage, so your pipeline doesn't get stuck with rough first drafts.",
+      "target_word_count": 165,
+      "narration": "Alright, picture this: we’ve walked all the way down our robot assembly line, from world-building all the way to finished scenes—but let’s be real… first drafts are rarely Oscar material. What if, instead of crossing your fingers and hoping the Sequence Agent or Scene Agent nails it on their first shot, you had a team of robot editors? Welcome to enhancement agents! These little guys can swoop in anywhere—scene, sequence, even the premise—and, like, punch up the drama, fix whacky dialogue, or just clean up sloppy structure. Seriously, it’s like having a specialized ‘Grammarly but for story arcs’ working at every step. And the magic is, you can deploy these agents only where you need them—not everything needs to be rebuilt from scratch. A common mix-up is thinking the pipeline is linear and done when you see the first output—but no, the whole idea is to iterate, polish, and end up with something people (or producers) will actually want to read.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Stress that enhancement agents can be dropped in at any point",
+        "Mention how they're like modular editors for screenwriting",
+        "Reinforce: first outputs aren't sacred—everything is improvable",
+        "Bridge to next: 'what happens when we want to do this for more than screenplays?'"
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 17."
+      "transition_out": "So if you’re thinking, 'Whoa, could I use all this editing power for reports or games or giant research docs?'—hang tight. Up next, we’ll generalize the method and see how to remix this agent pipeline beyond just movies."
     },
     {
       "slide_number": 17,
-      "title_guess": "Generalizing to Other",
-      "summary": "Generalizing to Other \nDocuments\n•\nBy modifying the agent prompts, this hierarchical flow can be \nused for other long text documents\nDocument\nPremise\nArc\nSequence\nScene\nArtist \nRendering\nBook\nPremise\nTable of contents\nChapter\nSub-chapter\nPodcast\nConcept\nFlow, format\nSegment\nBeat\nSong\nPremise\nStructure (verse, \nhooks, coda)\nVerse\nCouplet\nLecture\nLearning \nobjective\nOutline\nModule\nSlide\nBusiness \nplan\nValue prop\nOutline\nSection\nSub-section",
+      "title_guess": "Generalizing to Other Documents",
+      "summary": "This slide demonstrates that the hierarchical, agent-driven flow used for screenplay generation can be adapted for a wide range of long-form documents. By adjusting the prompts and stages, the same structural approach works for books, podcasts, songs, lectures, and business plans, with each mapped to their own domain-specific layers (e.g., chapters, segments, verses, modules). The table provides concrete analogies across different forms, showing practical transfer of the method.",
       "bullet_points": [
-        "Generalizing to Other",
-        "Documents",
-        "•",
-        "By modifying the agent prompts, this hierarchical flow can be",
-        "used for other long text documents",
-        "Document",
-        "Premise",
-        "Arc"
+        "Hierarchical flow can be adapted for other long text documents",
+        "Modify agent prompts to fit new document type",
+        "Table mapping screenplay workflow to books, podcasts, songs, lectures, business plans"
       ],
       "visual_elements": [
-        "Slide layout from PDF/image"
+        "Large bold purple heading at top centered",
+        "Single bolded bullet point under heading",
+        "Wide table with six columns (Document, Premise, Arc, Sequence, Scene, Artist Rendering)",
+        "Rows for Book, Podcast, Song, Lecture, Business plan",
+        "Small illustrated icons or images in each 'Artist Rendering' cell"
       ],
       "key_concepts": [
-        "Generalizing to Other",
-        "Documents",
-        "By modifying the agent prompts, this hierarchical flow can be",
-        "used for other long text documents",
-        "Document"
+        "Hierarchical flow generalization",
+        "Cross-domain document mapping",
+        "Agent prompt modification",
+        "Structural analogy"
       ],
       "carryover_concepts": [
-        "Enhancement Agents",
-        "We can improve the agentic flow"
+        "Stage-wise screenplay generation",
+        "Hierarchical agent workflow",
+        "Enhancement of intermediate outputs"
       ],
-      "relation_to_previous": "Having developed «Enhancement Agents», we now layer in Generalizing to Other so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Generalizing to Other with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Generalizing to Other» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Generalizing to Other as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "Another way to say the same tension: we’re trying to make «Generalizing to Other» actionable. That means turning Generalizing to Other, Documents, By modifying the agent prompts, this hierarchical flow can be into something you could actually implement. I’m not going to read the slide line by line — I’m going to tell you what matters for coherence and why instructors put this block here.",
+      "relation_to_previous": "After proposing that specialized agents can enhance intermediate outputs in the screenplay pipeline, this slide shifts from script-specific optimization to show that the entire hierarchical, agentic workflow is a flexible template. By systematically mapping how the methodology applies to other documents—like books or business plans, with new terminology for each stage—it underscores the versatility and adaptability of the agent-based, staged approach.",
+      "pedagogical_role": "synthesize",
+      "what_this_slide_adds": "It explicitly generalizes the screenwriting agent framework to multiple domains, using a visual comparison table to make transferable analogies and emphasize the universal value of hierarchical, agent-driven document generation.",
+      "likely_pedagogical_purpose": "Show broad applicability of agentic flow",
+      "teaching_goal": "Students should grasp that the agentic, hierarchical pipeline we've built for screenplays is actually a universal strategy you can retrofit onto almost any big, complicated document generation process.",
+      "likely_confusion_point": "Some students might think the whole approach only makes sense for movies, not noticing how flexible these hierarchy stages are across domains.",
+      "intuitive_hook": "Think of the pipeline like LEGO blocks that snap together differently to build books, podcasts, even business plans—it's the same logic, just new labels.",
+      "takeaway": "Hierarchical, agent-driven workflows aren’t just for Hollywood scripts—you can remix this exact structure to organize any massive writing task, just by swapping in new building blocks.",
+      "target_word_count": 160,
+      "narration": "Let’s crack open the big reveal: all this talk about screenplays? It’s honestly just a prototype. The same step-by-step, agent-powered flow—premise, arc, sequence, scene—works anywhere you’ve got a chunky document that needs to stay on track. Peep that table: writing a book? Swap ‘arc’ for your table of contents, ‘scene’ for a mini-chapter. Building a business plan? Your ‘premise’ is the value prop, each ‘sequence’ is a section, and, not gonna lie, every TED Talk or epic lecture you’ve ever been stuck in? It’s secretly rocking modules and slides as the backbone. Super easy to get tripped up here and think screenwriting needs special tricks—but nope! The power move is to just relabel the stages, tweak each agent’s prompts, and you’ve got a reusable recipe for podcasts, songs, boardroom docs—literally anything chunky and structured. So next time you dread a giant project, break it into agents and layers—the pipeline’s your cheat code.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Bridge from enhancement/editing agents to full workflow generalization",
+        "Emphasize pipeline is modular and transferable—not just for movies",
+        "Use table examples as ‘see, it’s all LEGOs, just with different colors’",
+        "Reassure: just adjust stage labels/agent prompts for any document type"
       ],
-      "transition_out": "Next we’ll pick up the thread on slide 18."
+      "transition_out": "On deck: you’re going to get hands-on and actually remix this pipeline for a new domain. Get ready to build—or break!—your own agent-powered workflow."
     },
     {
       "slide_number": 18,
       "title_guess": "Coding Session",
-      "summary": "Coding Session\n• Write a short screenplay using Awesome-O\n• Add enhancement agents to the agentic flow\n• Modify Awesome-O for different document types",
+      "summary": "This slide announces a hands-on coding session where participants are tasked with writing a short screenplay using the Awesome-O agentic framework. It encourages experimentation with inserting enhancement agents into the established workflow and adapting the system to generate other types of long-form documents. The slide visually recaps the core workflow stages, linking the earlier conceptual models to concrete programming activities.",
       "bullet_points": [
-        "Coding Session",
-        "• Write a short screenplay using Awesome-O",
-        "• Add enhancement agents to the agentic flow",
-        "• Modify Awesome-O for different document types"
-      ],
-      "visual_elements": [
-        "Slide layout from PDF/image"
-      ],
-      "key_concepts": [
-        "Coding Session",
         "Write a short screenplay using Awesome-O",
         "Add enhancement agents to the agentic flow",
         "Modify Awesome-O for different document types"
       ],
+      "visual_elements": [
+        "Large bold purple heading at the top ('Coding Session')",
+        "Three black bullet points centered under the heading",
+        "Workflow diagram at bottom showing boxes for Premise, Arc, Sequences, and Scenes with arrows and small robot icons at each stage",
+        "Colored boxes: blue (Premise), purple (Arc), orange (Sequences), green (Scenes)"
+      ],
+      "key_concepts": [
+        "Coding exercise",
+        "Agentic screenplay workflow",
+        "Enhancement agent integration",
+        "Generalizing agent flows"
+      ],
       "carryover_concepts": [
-        "Generalizing to Other",
-        "Documents"
+        "Hierarchical agentic flow",
+        "Enhancement agents",
+        "Document type adaptation"
       ],
-      "relation_to_previous": "Having developed «Generalizing to Other», we now layer in Coding Session so students see how the argument advances rather than repeating the same claim.",
-      "pedagogical_role": "introduce_method",
-      "what_this_slide_adds": "Develops the thread around Coding Session with concrete detail from the deck.",
-      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
-      "teaching_goal": "Solidify «Coding Session» as a meaningful step in the staged pipeline.",
-      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
-      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
-      "takeaway": "Remember Coding Session as the hinge for this section.",
-      "target_word_count": 80,
-      "narration": "From here, think about what you’d *test* if you were peer-reviewing a generated screenplay. Coding Session is basically the checklist for that review: Coding Session, Write a short screenplay using Awesome-O, Add enhancement agents to the agentic flow. The through-line from earlier slides is that decomposition buys you inspectable pieces; this slide names what those pieces should contain.",
+      "relation_to_previous": "Previously, the adaptability of the hierarchical, agent-driven workflow was emphasized, showing how the same structured approach and agents can be tailored for various long-form documents with domain-specific modifications. Now, this slide initiates active practice, shifting from conceptual and architectural understanding to hands-on implementation: participants are prompted to build, enhance, and customize the screenplay pipeline themselves, applying concepts discussed earlier in a practical setting.",
+      "pedagogical_role": "preview_practice",
+      "what_this_slide_adds": "It transitions from theory to applied work by tasking learners with coding and customizing the agent-based screenplay system, reinforcing both technical and conceptual understanding through direct programming.",
+      "likely_pedagogical_purpose": "Kick off applied coding and experimentation",
+      "teaching_goal": "Students should actually launch into coding, experimenting firsthand with the agentic pipeline—writing, tweaking, and remixing the full flow for screenplays or any long-form doc they want.",
+      "likely_confusion_point": "Thinking the agent workflow is too rigid to adapt or that only one 'correct' script exists.",
+      "intuitive_hook": "Imagine you’ve just been handed the keys to a movie studio—your first job is to remix the playbook, not just follow it.",
+      "takeaway": "Hands-on practice—remixing or inventing workflows—cements your understanding way better than just studying the theory.",
+      "target_word_count": 155,
+      "narration": "So here’s your moment—the training wheels come off! You’ve seen the theory, the blueprints, all the step-by-step agent handoffs from premise to scene... but honestly, the magic only clicks when you actually run it yourself. Think of the pipeline like a modular Lego set: you can build the 'standard' screenplay, but you can also, like, slap a turbo booster on it with enhancement agents, or swap out steps to crank out a totally different doc—business plan, D&D campaign guide, choose your flavor. Don’t stress if you hit weird errors or the first try gets messy; that’s the whole point. Tinker, break stuff, stick in your own enhancement bots, or make Awesome-O write something totally wild—every remix teaches you more than a week of extra reading. Hit the playground, experiment, and see what the pipeline can really do when it’s in your hands.",
       "speaking_notes": [
-        "Teach one idea; avoid list voice",
-        "Gesture to arc / pipeline, not slide numbers"
+        "Encourage experiments and off-script hacking",
+        "Remind: the workflow isn't just for screenplays—remix for your own uses",
+        "Iterating and breaking things is where you actually learn",
+        "Invite questions or 'show-and-tell' in the chat or next class"
       ],
-      "transition_out": "That’s the core pipeline story; we’ll close with how you’d adapt it beyond screenplays."
+      "transition_out": "Jump in and show the pipeline who’s boss—can’t wait to see what you build, break, or remix next! And seriously, keep your weirdest results; those are gold for next time."
     }
   ]
 }
