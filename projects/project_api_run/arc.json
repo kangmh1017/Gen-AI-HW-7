@@ -7,6 +7,7 @@
       "end_slide": 6,
       "function": "Frame and develop ideas in this section of the deck.",
       "summary": "Why one-shot writing drifts and loses coherence.",
+      "why_this_section_exists": "Students need a crisp failure mode before any architectural fix.",
       "slide_numbers": [
         1,
         2,
@@ -22,6 +23,7 @@
       "end_slide": 12,
       "function": "Frame and develop ideas in this section of the deck.",
       "summary": "Premise, arc, and scene-level agents for structured output.",
+      "why_this_section_exists": "Once the problem is credible, the lecture introduces the decomposition that addresses it.",
       "slide_numbers": [
         7,
         8,
@@ -37,6 +39,7 @@
       "end_slide": 18,
       "function": "Frame and develop ideas in this section of the deck.",
       "summary": "How the pieces connect and generalize beyond screenplays.",
+      "why_this_section_exists": "The closing ties mechanism back to transferable document design.",
       "slide_numbers": [
         13,
         14,
@@ -48,8 +51,18 @@
     }
   ],
   "transitions": [
-    "From “Problem: long-form generation limits” to “Design: hierarchical screenplay / agent pipeline”: the deck moves from Why one-shot writing drifts and loses coherence.… to Premise, arc, and scene-level agents for structured output.…",
-    "From “Design: hierarchical screenplay / agent pipeline” to “Synthesis: end-to-end flow and takeaways”: the deck moves from Premise, arc, and scene-level agents for structured output.… to How the pieces connect and generalize beyond screenplays.…"
+    {
+      "from_act": "Problem: long-form generation limits",
+      "to_act": "Design: hierarchical screenplay / agent pipeline",
+      "transition_reason": "The deck shifts from Problem: long-form generation limits to Design: hierarchical screenplay / agent pipeline so students do not accept tooling before they accept the coherence problem it solves.",
+      "pedagogical_logic": "Problem motivation must precede architectural prescription."
+    },
+    {
+      "from_act": "Design: hierarchical screenplay / agent pipeline",
+      "to_act": "Synthesis: end-to-end flow and takeaways",
+      "transition_reason": "The deck shifts from Design: hierarchical screenplay / agent pipeline to Synthesis: end-to-end flow and takeaways so students do not accept tooling before they accept the coherence problem it solves.",
+      "pedagogical_logic": "Problem motivation must precede architectural prescription."
+    }
   ],
   "ending_function": "Students should see long-form generation as a planning problem solvable with staged agents."
 }

@@ -4,7 +4,7 @@ import json
 import os
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Callable, Dict, List, Optional, Union
 
 from .utils import image_to_data_url
 
@@ -99,6 +99,29 @@ class LLMClient:
                 )
                 return schema_hint
             raise
+
+    def json_response_with_revision(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        schema_hint: Dict[str, Any],
+        image_path: Optional[Path] = None,
+        revision_prompt: Optional[str] = None,
+        needs_revision: Optional[Callable[[Dict[str, Any]], bool]] = None,
+    ) -> Dict[str, Any]:
+        """One follow-up JSON call if needs_revision(first_parse) is True (API only)."""
+        first = self.json_response(system_prompt, user_prompt, schema_hint, image_path=image_path)
+        if not self.enabled or needs_revision is None or revision_prompt is None:
+            return first
+        if not needs_revision(first):
+            return first
+        follow = (
+            user_prompt
+            + "\n\n---\nREVISION (required):\n"
+            + revision_prompt
+            + "\nReturn a single JSON object with the SAME keys as before; fix only what was wrong."
+        )
+        return self.json_response(system_prompt, follow, first, image_path=image_path)
 
     def text_response(self, system_prompt: str, user_prompt: str, image_path: Optional[Path] = None) -> str:
         if not self.enabled:

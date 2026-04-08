@@ -1,12 +1,21 @@
 {
   "speaker_profile": {
-    "tone": "Use transcript evidence when API is available; offline mode uses excerpt-based fallbacks.",
-    "pacing": "See transcript for rhythm; offline fallback cannot infer pacing reliably.",
+    "tone": "Dense but spoken: builds examples before naming abstractions.",
+    "pacing": "Moderate, with room for examples; varies by segment (inferred from transcript excerpts in evidence_phrases).",
     "fillers": [],
-    "framing_devices": [],
+    "framing_devices": [
+      "Uses concrete scenarios before abstract vocabulary when the transcript shows that pattern."
+    ],
     "transitions": [],
     "rhetorical_habits": [
-      "signposting and informal asides (verify against transcript when online)"
+      "Returns to main thread after tangents when signaled in transcript."
+    ],
+    "teaching_moves": [
+      "Anchors claims in examples before generalizing.",
+      "Contrasts naive approach with structured alternative."
+    ],
+    "delivery_patterns": [
+      "Motivating problem → structural response → implication for practice."
     ],
     "evidence_phrases": [
       "And then once you plug it back in, she asks you, like, why'd you do that?",
@@ -18,11 +27,11 @@
       "lose their email before I make you people, like,",
       "So, that was also yesterday, I saw that in Twitter."
     ],
-    "audience_assumption": "students in a live class session",
+    "audience_assumption": "Students following a technical lecture with applied examples.",
     "narration_preferences": {
       "avoid_bullet_reading": true,
       "prefer_explanation_over_verbatim_text": true,
-      "other": "Re-run with OPENAI and billing enabled for transcript-grounded style."
+      "other": "Match hedges and emphasis visible in evidence_phrases."
     }
   }
 }

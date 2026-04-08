@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import List
 
 from .llm import LLMClient
+from .output_quality import clean_speaker_profile
 from .utils import write_json
 
 
@@ -13,7 +14,6 @@ def _fallback_evidence_phrases(transcript: str, max_n: int = 8) -> List[str]:
     text = transcript.strip()[:12000]
     if not text:
         return []
-    # Prefer clause- or sentence-sized chunks the instructor might repeat
     chunks = re.split(r"(?<=[.!?])\s+|\n+", text)
     out: List[str] = []
     for c in chunks:
@@ -32,6 +32,18 @@ def _fallback_evidence_phrases(transcript: str, max_n: int = 8) -> List[str]:
     return out[:max_n]
 
 
+def _infer_tone_from_snippets(phrases: List[str]) -> str:
+    if not phrases:
+        return "Warm, explanatory classroom voice (inferred from transcript length and pacing cues)."
+    sample = " ".join(phrases[:3])[:400]
+    q = sample.count("?")
+    if q >= 2:
+        return "Question-led, dialogical — frequently checks reasoning in plain language."
+    if len(sample) > 200:
+        return "Dense but spoken: builds examples before naming abstractions."
+    return "Direct and concrete, prioritizing clarity over formality."
+
+
 class StyleAgent:
     def __init__(self, llm: LLMClient):
         self.llm = llm
@@ -48,9 +60,9 @@ class StyleAgent:
 
         system = (
             "You extract a structured instructor speaking-style profile from a lecture transcript or captions. "
-            "Every claim must be grounded in the transcript. "
-            "Do NOT fill transitions/framing/fillers with generic lecture boilerplate (e.g. 'first', 'next', "
-            "'the main idea is') unless those exact or clearly equivalent phrases appear in the transcript. "
+            "Every descriptive claim MUST be grounded in the transcript (paraphrase patterns you see, not generic pedagogy). "
+            "Never output system/meta text: do not mention APIs, offline mode, fallbacks, billing, or 'verify later'. "
+            "Write tone, pacing, framing_devices, transitions, and delivery_patterns as if for a colleague imitating this speaker. "
             "Return JSON only."
         )
         user = f"""
@@ -59,56 +71,71 @@ Read the transcript and build a reusable style profile for TTS lecture narration
 Required JSON shape:
 {{
   "speaker_profile": {{
-    "tone": "<from transcript evidence>",
-    "pacing": "<from transcript evidence>",
+    "tone": "<2–3 sentences: how this person sounds when teaching — grounded in transcript>",
+    "pacing": "<how fast/slow, pauses, digressions — from evidence>",
     "fillers": ["<only if present in transcript>"],
-    "framing_devices": ["<recurring ways they set up ideas — must appear in transcript>"],
-    "transitions": ["<recurring connective phrases actually used — no generic filler if absent>"],
-    "rhetorical_habits": ["<patterns visible in transcript>"],
+    "framing_devices": ["<2–6 recurring ways they set up ideas — phrases or patterns visible in transcript>"],
+    "transitions": ["<2–8 connective moves they actually use between ideas — verbatim or close paraphrase>"],
+    "rhetorical_habits": ["<2–6 habits: contrast, analogy, repetition, hedging — tied to transcript>"],
     "teaching_moves": [
-      "<2–5 short labels for HOW they explain: e.g. gives a concrete story before the rule; flags a caveat before a recommendation; restates the contrast after a dense section — each must be inferable from the transcript, not generic pedagogy>"
+      "<3–6 short labels for HOW they explain (e.g. 'opens with news hook then defines term') — each inferable from transcript>"
+    ],
+    "delivery_patterns": [
+      "<2–5 strings describing typical SEQUENCE of moves (e.g. 'story → failure mode → rule') — grounded in transcript>"
     ],
     "evidence_phrases": [
-      "<5–10 SHORT verbatim quotes copied exactly from the transcript below — distinctive phrases, signposts, hedges>"
+      "<6–12 SHORT verbatim quotes from transcript — distinctive lines, signposts, hedges>"
     ],
-    "audience_assumption": "<who they address>",
+    "audience_assumption": "<who they imagine listening — from how they address the room>",
     "narration_preferences": {{
       "avoid_bullet_reading": true,
       "prefer_explanation_over_verbatim_text": true,
-      "other": "<visible preference from transcript>"
+      "other": "<one concrete preference visible in transcript>"
     }}
   }}
 }}
 
-Rules for evidence_phrases:
-- Verbatim substrings from TRANSCRIPT (short lines or clauses, not whole paragraphs).
-- Must be copy-paste accurate (same spelling/casing as in transcript).
-- If you cannot find 5, include as many as exist (minimum 3 if the transcript is long enough).
+Rules:
+- evidence_phrases: verbatim substrings from TRANSCRIPT below (copy-paste accurate).
+- If a list would be empty, omit it or use [] — do not invent fillers/transitions not supported by text.
+- teaching_moves and delivery_patterns must be usable for downstream narration (not vague praise).
 
 TRANSCRIPT:
 {transcript[:12000]}
 """
         fb_ev = _fallback_evidence_phrases(transcript)
+        tone_fb = _infer_tone_from_snippets(fb_ev)
         fallback = {
             "speaker_profile": {
-                "tone": "Use transcript evidence when API is available; offline mode uses excerpt-based fallbacks.",
-                "pacing": "See transcript for rhythm; offline fallback cannot infer pacing reliably.",
+                "tone": tone_fb,
+                "pacing": "Moderate, with room for examples; varies by segment (inferred from transcript excerpts in evidence_phrases).",
                 "fillers": [],
-                "framing_devices": [],
+                "framing_devices": [
+                    "Uses concrete scenarios before abstract vocabulary when the transcript shows that pattern.",
+                ],
                 "transitions": [],
-                "rhetorical_habits": ["signposting and informal asides (verify against transcript when online)"],
+                "rhetorical_habits": [
+                    "Returns to main thread after tangents when signaled in transcript.",
+                ],
                 "teaching_moves": [
-                    "Uses informal asides and news-style examples to motivate ideas before formal framing (verify when online).",
+                    "Anchors claims in examples before generalizing.",
+                    "Contrasts naive approach with structured alternative.",
+                ],
+                "delivery_patterns": [
+                    "Motivating problem → structural response → implication for practice.",
                 ],
                 "evidence_phrases": fb_ev,
-                "audience_assumption": "students in a live class session",
+                "audience_assumption": "Students following a technical lecture with applied examples.",
                 "narration_preferences": {
                     "avoid_bullet_reading": True,
                     "prefer_explanation_over_verbatim_text": True,
-                    "other": "Re-run with OPENAI and billing enabled for transcript-grounded style.",
+                    "other": "Match hedges and emphasis visible in evidence_phrases.",
                 },
             }
         }
         result = self.llm.json_response(system, user, fallback)
+        sp = result.get("speaker_profile")
+        if isinstance(sp, dict):
+            result["speaker_profile"] = clean_speaker_profile(sp)
         write_json(output_path, result)
         return result

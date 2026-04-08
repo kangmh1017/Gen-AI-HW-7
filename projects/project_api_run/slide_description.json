@@ -2,21 +2,26 @@
   "slides": [
     {
       "slide_number": 1,
-      "title_guess": "Slide 1",
+      "title_guess": "AI Screenplays",
       "summary": "AI Screenplays",
       "bullet_points": [
         "AI Screenplays"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "AI Screenplays"
       ],
       "carryover_concepts": [],
       "relation_to_previous": "N/A (first slide)",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around AI Screenplays with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 2,
-      "title_guess": "Slide 2",
+      "title_guess": "Generating Long Documents",
       "summary": "Generating Long Documents\n• AI can be used to generate long, coherent \ntext documents\n• Books, reports, screenplays\n• Today we will build an agentic flow to \ngenerate screenplays for movies\n• This flow architecture can be generalized to \nother long text documents",
       "bullet_points": [
         "Generating Long Documents",
@@ -24,20 +29,31 @@
         "text documents",
         "• Books, reports, screenplays",
         "• Today we will build an agentic flow to",
-        "generate screenplays for movies"
+        "generate screenplays for movies",
+        "• This flow architecture can be generalized to",
+        "other long text documents"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Generating Long Documents",
+        "AI can be used to generate long, coherent",
+        "text documents",
+        "Books, reports, screenplays",
+        "Today we will build an agentic flow to"
       ],
       "carryover_concepts": [
-        "Slide 1"
+        "AI Screenplays"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 1”, carrying forward the ideas around: AI Screenplays.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «AI Screenplays», we now layer in Generating Long Documents so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Generating Long Documents with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 3,
-      "title_guess": "Slide 3",
+      "title_guess": "Challenge: \"One-Shot\"",
       "summary": "Challenge: \"One-Shot\" \nLong-Form\n• It is difficult for an AI to generate a long \ncoherent document in one-shot\n• Local vs global – the AI is good at writing \nsmall parts, but cannot maintain coherence \nacross whole document\n– Becomes “lost in the middle”\n– Context drift – deep into the document, the AI can \nhallucinate or lose focus of what to write",
       "bullet_points": [
         "Challenge: \"One-Shot\"",
@@ -45,20 +61,32 @@
         "• It is difficult for an AI to generate a long",
         "coherent document in one-shot",
         "• Local vs global – the AI is good at writing",
-        "small parts, but cannot maintain coherence"
+        "small parts, but cannot maintain coherence",
+        "across whole document",
+        "– Becomes “lost in the middle”"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Challenge: \"One-Shot\"",
+        "Long-Form",
+        "It is difficult for an AI to generate a long",
+        "coherent document in one-shot",
+        "Local vs global – the AI is good at writing"
       ],
       "carryover_concepts": [
-        "Slide 2"
+        "Generating Long Documents",
+        "AI can be used to generate long, coherent"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 2”, carrying forward the ideas around: Generating Long Documents\n• AI can be used to generate long, coherent \ntext documents\n• Books, reports, screenplays\n• Today we will build an agentic flow to \ngenerate screenplays for movies\n• This flo.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Generating Long Documents», we now layer in Challenge: \"One-Shot\" so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Challenge: \"One-Shot\" with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 4,
-      "title_guess": "Slide 4",
+      "title_guess": "Movie Screenplays",
       "summary": "Movie Screenplays\n• Screenplays have many different elements \nthe AI needs to capture\n– Story shape\n– Goals of “sequences” in the movie\n– Scene action and dialogue\n• Hierarchical structure of a screenplay\n– Premise – basic elements of the movie\n– Story arc – high level plot structure\n– Sequences - more detailed plot\n– Scenes – even more detailed plot",
       "bullet_points": [
         "Movie Screenplays",
@@ -66,36 +94,54 @@
         "the AI needs to capture",
         "– Story shape",
         "– Goals of “sequences” in the movie",
-        "– Scene action and dialogue"
+        "– Scene action and dialogue",
+        "• Hierarchical structure of a screenplay",
+        "– Premise – basic elements of the movie"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Movie Screenplays",
+        "Screenplays have many different elements",
+        "the AI needs to capture",
+        "Story shape",
+        "Goals of “sequences” in the movie"
       ],
       "carryover_concepts": [
-        "Slide 3"
+        "Challenge: \"One-Shot\"",
+        "Long-Form"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 3”, carrying forward the ideas around: Challenge: \"One-Shot\" \nLong-Form\n• It is difficult for an AI to generate a long \ncoherent document in one-shot\n• Local vs global – the AI is good at writing \nsmall parts, but cannot maintain coherence.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Challenge: \"One-Shot\"», we now layer in Movie Screenplays so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Movie Screenplays with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 5,
-      "title_guess": "Slide 5",
+      "title_guess": "Screenplay Flow",
       "summary": "Screenplay Flow",
       "bullet_points": [
         "Screenplay Flow"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Screenplay Flow"
       ],
       "carryover_concepts": [
-        "Slide 4"
+        "Movie Screenplays",
+        "Screenplays have many different elements"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 4”, carrying forward the ideas around: Movie Screenplays\n• Screenplays have many different elements \nthe AI needs to capture\n– Story shape\n– Goals of “sequences” in the movie\n– Scene action and dialogue\n• Hierarchical structure of a screen.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Movie Screenplays», we now layer in Screenplay Flow so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Screenplay Flow with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 6,
-      "title_guess": "Slide 6",
+      "title_guess": "Premise Agent",
       "summary": "Premise Agent\n• A chat agent that discusses with you what your \nmovie is about\n– Title, logline (like an executive summary), characters, genre, \ncentral conflict\n• You can ask the agent to give ideas for the plot if \nyou are stuck\n• This chat can take a few minutes even if you have a \ngeneral sense about your movie (takes time to \nspecify all the major elements of the movie)\n• This agent then creates a file premise.json",
       "bullet_points": [
         "Premise Agent",
@@ -103,68 +149,95 @@
         "movie is about",
         "– Title, logline (like an executive summary), characters, genre,",
         "central conflict",
-        "• You can ask the agent to give ideas for the plot if"
+        "• You can ask the agent to give ideas for the plot if",
+        "you are stuck",
+        "• This chat can take a few minutes even if you have a"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Premise Agent",
+        "A chat agent that discusses with you what your",
+        "movie is about",
+        "Title, logline (like an executive summary), characters, genre,",
+        "central conflict"
       ],
       "carryover_concepts": [
-        "Slide 5"
+        "Screenplay Flow"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 5”, carrying forward the ideas around: Screenplay Flow.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Screenplay Flow», we now layer in Premise Agent so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Premise Agent with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 7,
-      "title_guess": "Slide 7",
+      "title_guess": "Premise.json",
       "summary": "Premise.json",
       "bullet_points": [
         "Premise.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Premise.json"
       ],
       "carryover_concepts": [
-        "Slide 6"
+        "Premise Agent",
+        "A chat agent that discusses with you what your"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 6”, carrying forward the ideas around: Premise Agent\n• A chat agent that discusses with you what your \nmovie is about\n– Title, logline (like an executive summary), characters, genre, \ncentral conflict\n• You can ask the agent to give ideas .",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Premise Agent», we now layer in Premise.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Premise.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 8,
-      "title_guess": "Slide 8",
+      "title_guess": "Premise.json",
       "summary": "Premise.json",
       "bullet_points": [
         "Premise.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Premise.json"
       ],
       "carryover_concepts": [
-        "Slide 7"
+        "Premise.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 7”, carrying forward the ideas around: Premise.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Premise.json», we now layer in Premise.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Premise.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 9,
-      "title_guess": "Slide 9",
+      "title_guess": "Premise.json",
       "summary": "Premise.json",
       "bullet_points": [
         "Premise.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Premise.json"
       ],
       "carryover_concepts": [
-        "Slide 8"
+        "Premise.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 8”, carrying forward the ideas around: Premise.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Premise.json», we now layer in Premise.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Premise.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 10,
-      "title_guess": "Slide 10",
+      "title_guess": "Arc Agent",
       "summary": "Arc Agent\n• A chat agent that discusses your movie story arc\n– Arc consists of multiple acts\n– Agent takes premise.json as input for context\n• You tell the agent what happens in each act, then \nask it to draft the act, one at time\n• Premise file gives it context for the story arc\n• This agent then creates a file arc.json",
       "bullet_points": [
         "Arc Agent",
@@ -172,36 +245,53 @@
         "– Arc consists of multiple acts",
         "– Agent takes premise.json as input for context",
         "• You tell the agent what happens in each act, then",
-        "ask it to draft the act, one at time"
+        "ask it to draft the act, one at time",
+        "• Premise file gives it context for the story arc",
+        "• This agent then creates a file arc.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Arc Agent",
+        "A chat agent that discusses your movie story arc",
+        "Arc consists of multiple acts",
+        "Agent takes premise.json as input for context",
+        "You tell the agent what happens in each act, then"
       ],
       "carryover_concepts": [
-        "Slide 9"
+        "Premise.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 9”, carrying forward the ideas around: Premise.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Premise.json», we now layer in Arc Agent so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Arc Agent with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 11,
-      "title_guess": "Slide 11",
+      "title_guess": "Arc.json",
       "summary": "Arc.json",
       "bullet_points": [
         "Arc.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Arc.json"
       ],
       "carryover_concepts": [
-        "Slide 10"
+        "Arc Agent",
+        "A chat agent that discusses your movie story arc"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 10”, carrying forward the ideas around: Arc Agent\n• A chat agent that discusses your movie story arc\n– Arc consists of multiple acts\n– Agent takes premise.json as input for context\n• You tell the agent what happens in each act, then \nask it.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Arc Agent», we now layer in Arc.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Arc.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 12,
-      "title_guess": "Slide 12",
+      "title_guess": "Sequence Agent",
       "summary": "Sequence Agent\n• An automated agent (no chat) that writes the \nsequences of the movie for each act\n• Inputs per sequence\n– Premise.json, arc.json – give agent global view of the movie\n– All previous sequences generated so far – give agent local context \nfor what should happen next\n•\nPrimary sequence elements\n– Goal – what is the narrative purpose of this sequence\n– Key locations – locations in the sequence\n– Exit beat – how the sequence ends and transitions to next sequence\n• This agent then cre",
       "bullet_points": [
         "Sequence Agent",
@@ -209,36 +299,53 @@
         "sequences of the movie for each act",
         "• Inputs per sequence",
         "– Premise.json, arc.json – give agent global view of the movie",
-        "– All previous sequences generated so far – give agent local context"
+        "– All previous sequences generated so far – give agent local context",
+        "for what should happen next",
+        "•"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Sequence Agent",
+        "An automated agent (no chat) that writes the",
+        "sequences of the movie for each act",
+        "Inputs per sequence",
+        "Premise.json, arc.json – give agent global view of the movie"
       ],
       "carryover_concepts": [
-        "Slide 11"
+        "Arc.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 11”, carrying forward the ideas around: Arc.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Arc.json», we now layer in Sequence Agent so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Sequence Agent with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 13,
-      "title_guess": "Slide 13",
+      "title_guess": "Sequence.json",
       "summary": "Sequence.json",
       "bullet_points": [
         "Sequence.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Sequence.json"
       ],
       "carryover_concepts": [
-        "Slide 12"
+        "Sequence Agent",
+        "An automated agent (no chat) that writes the"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 12”, carrying forward the ideas around: Sequence Agent\n• An automated agent (no chat) that writes the \nsequences of the movie for each act\n• Inputs per sequence\n– Premise.json, arc.json – give agent global view of the movie\n– All previous s.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Sequence Agent», we now layer in Sequence.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Sequence.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 14,
-      "title_guess": "Slide 14",
+      "title_guess": "Scene Agent",
       "summary": "Scene Agent\n• An automated agent (no chat) that writes the scenes \nof the movie for each sequence\n• Inputs per sequence\n– Premise.json, arc.json, sequence.json – give agent global view of \nthe movie\n– All scenes generated so far in this sequence and the previous \nsequence – give agent local context for what should happen next\n•\nPrimary scene elements\n– Slug line – location of the scene\n– Blocks – series of actions and dialogues in the scene\n• This agent then creates a file scenes.json",
       "bullet_points": [
         "Scene Agent",
@@ -246,36 +353,53 @@
         "of the movie for each sequence",
         "• Inputs per sequence",
         "– Premise.json, arc.json, sequence.json – give agent global view of",
-        "the movie"
+        "the movie",
+        "– All scenes generated so far in this sequence and the previous",
+        "sequence – give agent local context for what should happen next"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Scene Agent",
+        "An automated agent (no chat) that writes the scenes",
+        "of the movie for each sequence",
+        "Inputs per sequence",
+        "Premise.json, arc.json, sequence.json – give agent global view of"
       ],
       "carryover_concepts": [
-        "Slide 13"
+        "Sequence.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 13”, carrying forward the ideas around: Sequence.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Sequence.json», we now layer in Scene Agent so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Scene Agent with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 15,
-      "title_guess": "Slide 15",
+      "title_guess": "Scenes.json",
       "summary": "Scenes.json",
       "bullet_points": [
         "Scenes.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Scenes.json"
       ],
       "carryover_concepts": [
-        "Slide 14"
+        "Scene Agent",
+        "An automated agent (no chat) that writes the scenes"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 14”, carrying forward the ideas around: Scene Agent\n• An automated agent (no chat) that writes the scenes \nof the movie for each sequence\n• Inputs per sequence\n– Premise.json, arc.json, sequence.json – give agent global view of \nthe movie\n–.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Scene Agent», we now layer in Scenes.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Scenes.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 16,
-      "title_guess": "Slide 16",
+      "title_guess": "Enhancement Agents",
       "summary": "Enhancement Agents\n•\nWe can improve the agentic flow \nby using agents to enhance \nintermediate outputs\n– Write better sequences or scenes\n– Clean up the premise\n– Make the arc more creative",
       "bullet_points": [
         "Enhancement Agents",
@@ -283,20 +407,31 @@
         "We can improve the agentic flow",
         "by using agents to enhance",
         "intermediate outputs",
-        "– Write better sequences or scenes"
+        "– Write better sequences or scenes",
+        "– Clean up the premise",
+        "– Make the arc more creative"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Enhancement Agents",
+        "We can improve the agentic flow",
+        "by using agents to enhance",
+        "intermediate outputs",
+        "Write better sequences or scenes"
       ],
       "carryover_concepts": [
-        "Slide 15"
+        "Scenes.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 15”, carrying forward the ideas around: Scenes.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Scenes.json», we now layer in Enhancement Agents so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Enhancement Agents with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 17,
-      "title_guess": "Slide 17",
+      "title_guess": "Generalizing to Other",
       "summary": "Generalizing to Other \nDocuments\n•\nBy modifying the agent prompts, this hierarchical flow can be \nused for other long text documents\nDocument\nPremise\nArc\nSequence\nScene\nArtist \nRendering\nBook\nPremise\nTable of contents\nChapter\nSub-chapter\nPodcast\nConcept\nFlow, format\nSegment\nBeat\nSong\nPremise\nStructure (verse, \nhooks, coda)\nVerse\nCouplet\nLecture\nLearning \nobjective\nOutline\nModule\nSlide\nBusiness \nplan\nValue prop\nOutline\nSection\nSub-section",
       "bullet_points": [
         "Generalizing to Other",
@@ -304,20 +439,32 @@
         "•",
         "By modifying the agent prompts, this hierarchical flow can be",
         "used for other long text documents",
-        "Document"
+        "Document",
+        "Premise",
+        "Arc"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Generalizing to Other",
+        "Documents",
+        "By modifying the agent prompts, this hierarchical flow can be",
+        "used for other long text documents",
+        "Document"
       ],
       "carryover_concepts": [
-        "Slide 16"
+        "Enhancement Agents",
+        "We can improve the agentic flow"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 16”, carrying forward the ideas around: Enhancement Agents\n•\nWe can improve the agentic flow \nby using agents to enhance \nintermediate outputs\n– Write better sequences or scenes\n– Clean up the premise\n– Make the arc more creative.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Enhancement Agents», we now layer in Generalizing to Other so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Generalizing to Other with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     },
     {
       "slide_number": 18,
-      "title_guess": "Slide 18",
+      "title_guess": "Coding Session",
       "summary": "Coding Session\n• Write a short screenplay using Awesome-O\n• Add enhancement agents to the agentic flow\n• Modify Awesome-O for different document types",
       "bullet_points": [
         "Coding Session",
@@ -326,13 +473,22 @@
         "• Modify Awesome-O for different document types"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Coding Session",
+        "Write a short screenplay using Awesome-O",
+        "Add enhancement agents to the agentic flow",
+        "Modify Awesome-O for different document types"
       ],
       "carryover_concepts": [
-        "Slide 17"
+        "Generalizing to Other",
+        "Documents"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 17”, carrying forward the ideas around: Generalizing to Other \nDocuments\n•\nBy modifying the agent prompts, this hierarchical flow can be \nused for other long text documents\nDocument\nPremise\nArc\nSequence\nScene\nArtist \nRendering\nBook\nPremise\n.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept"
+      "relation_to_previous": "Having developed «Generalizing to Other», we now layer in Coding Session so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Coding Session with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information."
     }
   ]
 }

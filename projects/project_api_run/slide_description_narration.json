@@ -2,27 +2,37 @@
   "slides": [
     {
       "slide_number": 1,
-      "title_guess": "Slide 1",
+      "title_guess": "AI Screenplays",
       "summary": "AI Screenplays",
       "bullet_points": [
         "AI Screenplays"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "AI Screenplays"
       ],
       "carryover_concepts": [],
       "relation_to_previous": "N/A (first slide)",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "Hi, I’m your instructor for today’s session on AI-generated screenplays and long-form writing. We’re going to look at why one-shot generation breaks down for long documents, and how a structured, multi-agent pipeline can keep a screenplay coherent from premise through scenes. By the end, you should see how to generalize this flow to other long text tasks.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around AI Screenplays with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Frame long-form AI writing as a planning and decomposition problem.",
+      "likely_confusion_point": "Thinking a single prompt can hold an entire movie in working memory.",
+      "intuitive_hook": "Long text is less like typing a paragraph and more like running a project with dependencies.",
+      "takeaway": "We’re building intuition for staged generation before we name each agent.",
+      "target_word_count": 95,
+      "narration": "Hi — in this session we’re going to treat AI screenplays as a serious long-form writing problem. I’ll walk you through why one-shot generation falls apart on coherence, and how a staged, multi-agent pipeline can keep premise, arc, and scenes aligned. The goal is not just a demo: it’s a reusable pattern for any long document.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "Next, we’ll start from the core problem: what goes wrong when we ask a model to write a full script in one go."
+      "transition_out": "Next we’ll ground the promise of long outputs in the actual failure modes you hit when you ask for a full script in one go."
     },
     {
       "slide_number": 2,
-      "title_guess": "Slide 2",
+      "title_guess": "Generating Long Documents",
       "summary": "Generating Long Documents\n• AI can be used to generate long, coherent \ntext documents\n• Books, reports, screenplays\n• Today we will build an agentic flow to \ngenerate screenplays for movies\n• This flow architecture can be generalized to \nother long text documents",
       "bullet_points": [
         "Generating Long Documents",
@@ -30,26 +40,42 @@
         "text documents",
         "• Books, reports, screenplays",
         "• Today we will build an agentic flow to",
-        "generate screenplays for movies"
+        "generate screenplays for movies",
+        "• This flow architecture can be generalized to",
+        "other long text documents"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Generating Long Documents",
+        "AI can be used to generate long, coherent",
+        "text documents",
+        "Books, reports, screenplays",
+        "Today we will build an agentic flow to"
       ],
       "carryover_concepts": [
-        "Slide 1"
+        "AI Screenplays"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 1”, carrying forward the ideas around: AI Screenplays.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "Another angle on the same story: Generating Long Documents • AI can be used to generate long, coherent  text documents • Books, reports, screenplays • Today we will build an agentic flow to  generate screenplays for movies • This flow architecture can be generalized to  other long text documents Notice how this connects back to Slide 1.",
+      "relation_to_previous": "Having developed «AI Screenplays», we now layer in Generating Long Documents so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Generating Long Documents with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Generating Long Documents» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Generating Long Documents as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "Another way to say the same tension: we’re trying to make «Generating Long Documents» actionable. That means turning Generating Long Documents, AI can be used to generate long, coherent, text documents into something you could actually implement. I’m not going to read the slide line by line — I’m going to tell you what matters for coherence and why instructors put this block here.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 3."
+      "transition_out": "Next we’ll pick up the thread on slide 3."
     },
     {
       "slide_number": 3,
-      "title_guess": "Slide 3",
+      "title_guess": "Challenge: \"One-Shot\"",
       "summary": "Challenge: \"One-Shot\" \nLong-Form\n• It is difficult for an AI to generate a long \ncoherent document in one-shot\n• Local vs global – the AI is good at writing \nsmall parts, but cannot maintain coherence \nacross whole document\n– Becomes “lost in the middle”\n– Context drift – deep into the document, the AI can \nhallucinate or lose focus of what to write",
       "bullet_points": [
         "Challenge: \"One-Shot\"",
@@ -57,26 +83,43 @@
         "• It is difficult for an AI to generate a long",
         "coherent document in one-shot",
         "• Local vs global – the AI is good at writing",
-        "small parts, but cannot maintain coherence"
+        "small parts, but cannot maintain coherence",
+        "across whole document",
+        "– Becomes “lost in the middle”"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Challenge: \"One-Shot\"",
+        "Long-Form",
+        "It is difficult for an AI to generate a long",
+        "coherent document in one-shot",
+        "Local vs global – the AI is good at writing"
       ],
       "carryover_concepts": [
-        "Slide 2"
+        "Generating Long Documents",
+        "AI can be used to generate long, coherent"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 2”, carrying forward the ideas around: Generating Long Documents\n• AI can be used to generate long, coherent \ntext documents\n• Books, reports, screenplays\n• Today we will build an agentic flow to \ngenerate screenplays for movies\n• This flo.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "So if we take seriously This slide extends the prior discussion anchored in “Slide 2”, carrying forward the ideas around: Generating Long Documents • AI can be used to generate long, coherent  text docum…, the natural next step is to look at Slide 3 — Challenge: \"One-Shot\"  Long-Form • It is difficult for an AI to generate a long  coherent document in one-shot • Local vs global – the AI is good at writing  small parts, but cannot maintain coherence  across whole document – Becomes “lost in the middle” – Context drift – deep into the document, the AI can  hallucinat…",
+      "relation_to_previous": "Having developed «Generating Long Documents», we now layer in Challenge: \"One-Shot\" so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Challenge: \"One-Shot\" with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Challenge: \"One-Shot\"» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Challenge: \"One-Shot\" as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "From here, think about what you’d *test* if you were peer-reviewing a generated screenplay. Challenge: \"One-Shot\" is basically the checklist for that review: Challenge: \"One-Shot\", Long-Form, It is difficult for an AI to generate a long. The through-line from earlier slides is that decomposition buys you inspectable pieces; this slide names what those pieces should contain.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 4."
+      "transition_out": "Next we’ll pick up the thread on slide 4."
     },
     {
       "slide_number": 4,
-      "title_guess": "Slide 4",
+      "title_guess": "Movie Screenplays",
       "summary": "Movie Screenplays\n• Screenplays have many different elements \nthe AI needs to capture\n– Story shape\n– Goals of “sequences” in the movie\n– Scene action and dialogue\n• Hierarchical structure of a screenplay\n– Premise – basic elements of the movie\n– Story arc – high level plot structure\n– Sequences - more detailed plot\n– Scenes – even more detailed plot",
       "bullet_points": [
         "Movie Screenplays",
@@ -84,48 +127,76 @@
         "the AI needs to capture",
         "– Story shape",
         "– Goals of “sequences” in the movie",
-        "– Scene action and dialogue"
+        "– Scene action and dialogue",
+        "• Hierarchical structure of a screenplay",
+        "– Premise – basic elements of the movie"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Movie Screenplays",
+        "Screenplays have many different elements",
+        "the AI needs to capture",
+        "Story shape",
+        "Goals of “sequences” in the movie"
       ],
       "carryover_concepts": [
-        "Slide 3"
+        "Challenge: \"One-Shot\"",
+        "Long-Form"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 3”, carrying forward the ideas around: Challenge: \"One-Shot\" \nLong-Form\n• It is difficult for an AI to generate a long \ncoherent document in one-shot\n• Local vs global – the AI is good at writing \nsmall parts, but cannot maintain coherence.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "Picking up from where we left off: This slide extends the prior discussion anchored in “Slide 3”, carrying forward the ideas around: Challenge: \"One-Shot\"  Long-Form • It is difficult for an AI to generate a long  … Here I want to unpack Slide 4 — not by reading bullets, but by explaining why it matters for long-form coherence. Movie Screenplays • Screenplays have many different elements  the AI needs to capture – Story shape – Goals of “sequences” in the movie – Scene action and dialogue • Hierarchical structure of a screenplay – Premise – basic elements of the movie – Story arc – high level plot structure – Sequences - more detailed plot –…",
+      "relation_to_previous": "Having developed «Challenge: \"One-Shot\"», we now layer in Movie Screenplays so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Movie Screenplays with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Movie Screenplays» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Movie Screenplays as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "So zoom in with me on Movie Screenplays. The add here is: Develops the thread around Movie Screenplays with concrete detail from the deck.. What students often miss is that the hard part isn’t prompting once — it’s keeping later sections from drifting. We’ll keep returning to that as we add agents.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 5."
+      "transition_out": "Next we’ll pick up the thread on slide 5."
     },
     {
       "slide_number": 5,
-      "title_guess": "Slide 5",
+      "title_guess": "Screenplay Flow",
       "summary": "Screenplay Flow",
       "bullet_points": [
         "Screenplay Flow"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Screenplay Flow"
       ],
       "carryover_concepts": [
-        "Slide 4"
+        "Movie Screenplays",
+        "Screenplays have many different elements"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 4”, carrying forward the ideas around: Movie Screenplays\n• Screenplays have many different elements \nthe AI needs to capture\n– Story shape\n– Goals of “sequences” in the movie\n– Scene action and dialogue\n• Hierarchical structure of a screen.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "The thread from the last slide leads us to Slide 5. In plain terms, Screenplay Flow",
+      "relation_to_previous": "Having developed «Movie Screenplays», we now layer in Screenplay Flow so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Screenplay Flow with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Screenplay Flow» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Screenplay Flow as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "Let me connect this to Movie Screenplays. The move on this part of the deck is to pressure-test the idea that «Screenplay Flow» stands alone — it doesn’t; it sits in a bigger story about structure. In practical terms: Develops the thread around Screenplay Flow with concrete detail from the deck.. I want you to hear the mechanism, not memorize a bullet list.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 6."
+      "transition_out": "Next we’ll pick up the thread on slide 6."
     },
     {
       "slide_number": 6,
-      "title_guess": "Slide 6",
+      "title_guess": "Premise Agent",
       "summary": "Premise Agent\n• A chat agent that discusses with you what your \nmovie is about\n– Title, logline (like an executive summary), characters, genre, \ncentral conflict\n• You can ask the agent to give ideas for the plot if \nyou are stuck\n• This chat can take a few minutes even if you have a \ngeneral sense about your movie (takes time to \nspecify all the major elements of the movie)\n• This agent then creates a file premise.json",
       "bullet_points": [
         "Premise Agent",
@@ -133,92 +204,139 @@
         "movie is about",
         "– Title, logline (like an executive summary), characters, genre,",
         "central conflict",
-        "• You can ask the agent to give ideas for the plot if"
+        "• You can ask the agent to give ideas for the plot if",
+        "you are stuck",
+        "• This chat can take a few minutes even if you have a"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Premise Agent",
+        "A chat agent that discusses with you what your",
+        "movie is about",
+        "Title, logline (like an executive summary), characters, genre,",
+        "central conflict"
       ],
       "carryover_concepts": [
-        "Slide 5"
+        "Screenplay Flow"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 5”, carrying forward the ideas around: Screenplay Flow.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "Another angle on the same story: Premise Agent • A chat agent that discusses with you what your  movie is about – Title, logline (like an executive summary), characters, genre,  central conflict • You can ask the agent to give ideas for the plot if  you are stuck • This chat can take a few minutes even if you have a  general sense about your movie (t… Notice how this connects back to Slide 5.",
+      "relation_to_previous": "Having developed «Screenplay Flow», we now layer in Premise Agent so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Premise Agent with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Premise Agent» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Premise Agent as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "If you’re tracking the arc of the lecture, this is where we tighten the screw: Premise Agent. The intuition I’d give you first is that models are locally strong but globally sloppy unless we scaffold them. So here’s the content in spoken form: Premise Agent, A chat agent that discusses with you what your, movie is about. Hold onto that because we’ll reuse it when we wire agents together.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 7."
+      "transition_out": "Next we’ll pick up the thread on slide 7."
     },
     {
       "slide_number": 7,
-      "title_guess": "Slide 7",
+      "title_guess": "Premise.json",
       "summary": "Premise.json",
       "bullet_points": [
         "Premise.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Premise.json"
       ],
       "carryover_concepts": [
-        "Slide 6"
+        "Premise Agent",
+        "A chat agent that discusses with you what your"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 6”, carrying forward the ideas around: Premise Agent\n• A chat agent that discusses with you what your \nmovie is about\n– Title, logline (like an executive summary), characters, genre, \ncentral conflict\n• You can ask the agent to give ideas .",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "So if we take seriously This slide extends the prior discussion anchored in “Slide 6”, carrying forward the ideas around: Premise Agent • A chat agent that discusses with you what your  movie is about – …, the natural next step is to look at Slide 7 — Premise.json",
+      "relation_to_previous": "Having developed «Premise Agent», we now layer in Premise.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Premise.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Premise.json» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Premise.json as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "Another way to say the same tension: we’re trying to make «Premise.json» actionable. That means turning Premise.json into something you could actually implement. I’m not going to read the slide line by line — I’m going to tell you what matters for coherence and why instructors put this block here.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 8."
+      "transition_out": "Next we’ll pick up the thread on slide 8."
     },
     {
       "slide_number": 8,
-      "title_guess": "Slide 8",
+      "title_guess": "Premise.json",
       "summary": "Premise.json",
       "bullet_points": [
         "Premise.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Premise.json"
       ],
       "carryover_concepts": [
-        "Slide 7"
+        "Premise.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 7”, carrying forward the ideas around: Premise.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "Picking up from where we left off: This slide extends the prior discussion anchored in “Slide 7”, carrying forward the ideas around: Premise.json. Here I want to unpack Slide 8 — not by reading bullets, but by explaining why it matters for long-form coherence. Premise.json",
+      "relation_to_previous": "Having developed «Premise.json», we now layer in Premise.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Premise.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Premise.json» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Premise.json as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "From here, think about what you’d *test* if you were peer-reviewing a generated screenplay. Premise.json is basically the checklist for that review: Premise.json. The through-line from earlier slides is that decomposition buys you inspectable pieces; this slide names what those pieces should contain.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 9."
+      "transition_out": "Next we’ll pick up the thread on slide 9."
     },
     {
       "slide_number": 9,
-      "title_guess": "Slide 9",
+      "title_guess": "Premise.json",
       "summary": "Premise.json",
       "bullet_points": [
         "Premise.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Premise.json"
       ],
       "carryover_concepts": [
-        "Slide 8"
+        "Premise.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 8”, carrying forward the ideas around: Premise.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "The thread from the last slide leads us to Slide 9. In plain terms, Premise.json",
+      "relation_to_previous": "Having developed «Premise.json», we now layer in Premise.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Premise.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Premise.json» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Premise.json as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "So zoom in with me on Premise.json. The add here is: Develops the thread around Premise.json with concrete detail from the deck.. What students often miss is that the hard part isn’t prompting once — it’s keeping later sections from drifting. We’ll keep returning to that as we add agents.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 10."
+      "transition_out": "Next we’ll pick up the thread on slide 10."
     },
     {
       "slide_number": 10,
-      "title_guess": "Slide 10",
+      "title_guess": "Arc Agent",
       "summary": "Arc Agent\n• A chat agent that discusses your movie story arc\n– Arc consists of multiple acts\n– Agent takes premise.json as input for context\n• You tell the agent what happens in each act, then \nask it to draft the act, one at time\n• Premise file gives it context for the story arc\n• This agent then creates a file arc.json",
       "bullet_points": [
         "Arc Agent",
@@ -226,48 +344,75 @@
         "– Arc consists of multiple acts",
         "– Agent takes premise.json as input for context",
         "• You tell the agent what happens in each act, then",
-        "ask it to draft the act, one at time"
+        "ask it to draft the act, one at time",
+        "• Premise file gives it context for the story arc",
+        "• This agent then creates a file arc.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Arc Agent",
+        "A chat agent that discusses your movie story arc",
+        "Arc consists of multiple acts",
+        "Agent takes premise.json as input for context",
+        "You tell the agent what happens in each act, then"
       ],
       "carryover_concepts": [
-        "Slide 9"
+        "Premise.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 9”, carrying forward the ideas around: Premise.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "Another angle on the same story: Arc Agent • A chat agent that discusses your movie story arc – Arc consists of multiple acts – Agent takes premise.json as input for context • You tell the agent what happens in each act, then  ask it to draft the act, one at time • Premise file gives it context for the story arc • This agent then creates a file arc.j… Notice how this connects back to Slide 9.",
+      "relation_to_previous": "Having developed «Premise.json», we now layer in Arc Agent so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Arc Agent with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Arc Agent» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Arc Agent as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "Let me connect this to Premise.json. The move on this part of the deck is to pressure-test the idea that «Arc Agent» stands alone — it doesn’t; it sits in a bigger story about structure. In practical terms: Develops the thread around Arc Agent with concrete detail from the deck.. I want you to hear the mechanism, not memorize a bullet list.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 11."
+      "transition_out": "Next we’ll pick up the thread on slide 11."
     },
     {
       "slide_number": 11,
-      "title_guess": "Slide 11",
+      "title_guess": "Arc.json",
       "summary": "Arc.json",
       "bullet_points": [
         "Arc.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Arc.json"
       ],
       "carryover_concepts": [
-        "Slide 10"
+        "Arc Agent",
+        "A chat agent that discusses your movie story arc"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 10”, carrying forward the ideas around: Arc Agent\n• A chat agent that discusses your movie story arc\n– Arc consists of multiple acts\n– Agent takes premise.json as input for context\n• You tell the agent what happens in each act, then \nask it.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "So if we take seriously This slide extends the prior discussion anchored in “Slide 10”, carrying forward the ideas around: Arc Agent • A chat agent that discusses your movie story arc – Arc consists of m…, the natural next step is to look at Slide 11 — Arc.json",
+      "relation_to_previous": "Having developed «Arc Agent», we now layer in Arc.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Arc.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Arc.json» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Arc.json as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "If you’re tracking the arc of the lecture, this is where we tighten the screw: Arc.json. The intuition I’d give you first is that models are locally strong but globally sloppy unless we scaffold them. So here’s the content in spoken form: Arc.json. Hold onto that because we’ll reuse it when we wire agents together.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 12."
+      "transition_out": "Next we’ll pick up the thread on slide 12."
     },
     {
       "slide_number": 12,
-      "title_guess": "Slide 12",
+      "title_guess": "Sequence Agent",
       "summary": "Sequence Agent\n• An automated agent (no chat) that writes the \nsequences of the movie for each act\n• Inputs per sequence\n– Premise.json, arc.json – give agent global view of the movie\n– All previous sequences generated so far – give agent local context \nfor what should happen next\n•\nPrimary sequence elements\n– Goal – what is the narrative purpose of this sequence\n– Key locations – locations in the sequence\n– Exit beat – how the sequence ends and transitions to next sequence\n• This agent then cre",
       "bullet_points": [
         "Sequence Agent",
@@ -275,48 +420,75 @@
         "sequences of the movie for each act",
         "• Inputs per sequence",
         "– Premise.json, arc.json – give agent global view of the movie",
-        "– All previous sequences generated so far – give agent local context"
+        "– All previous sequences generated so far – give agent local context",
+        "for what should happen next",
+        "•"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Sequence Agent",
+        "An automated agent (no chat) that writes the",
+        "sequences of the movie for each act",
+        "Inputs per sequence",
+        "Premise.json, arc.json – give agent global view of the movie"
       ],
       "carryover_concepts": [
-        "Slide 11"
+        "Arc.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 11”, carrying forward the ideas around: Arc.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "Picking up from where we left off: This slide extends the prior discussion anchored in “Slide 11”, carrying forward the ideas around: Arc.json. Here I want to unpack Slide 12 — not by reading bullets, but by explaining why it matters for long-form coherence. Sequence Agent • An automated agent (no chat) that writes the  sequences of the movie for each act • Inputs per sequence – Premise.json, arc.json – give agent global view of the movie – All previous sequences generated so far – give agent local context  for what should happen next • Primary sequence elements – Goal – …",
+      "relation_to_previous": "Having developed «Arc.json», we now layer in Sequence Agent so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Sequence Agent with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Sequence Agent» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Sequence Agent as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "Another way to say the same tension: we’re trying to make «Sequence Agent» actionable. That means turning Sequence Agent, An automated agent (no chat) that writes the, sequences of the movie for each act into something you could actually implement. I’m not going to read the slide line by line — I’m going to tell you what matters for coherence and why instructors put this block here.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 13."
+      "transition_out": "Next we’ll pick up the thread on slide 13."
     },
     {
       "slide_number": 13,
-      "title_guess": "Slide 13",
+      "title_guess": "Sequence.json",
       "summary": "Sequence.json",
       "bullet_points": [
         "Sequence.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Sequence.json"
       ],
       "carryover_concepts": [
-        "Slide 12"
+        "Sequence Agent",
+        "An automated agent (no chat) that writes the"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 12”, carrying forward the ideas around: Sequence Agent\n• An automated agent (no chat) that writes the \nsequences of the movie for each act\n• Inputs per sequence\n– Premise.json, arc.json – give agent global view of the movie\n– All previous s.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "The thread from the last slide leads us to Slide 13. In plain terms, Sequence.json",
+      "relation_to_previous": "Having developed «Sequence Agent», we now layer in Sequence.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Sequence.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Sequence.json» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Sequence.json as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "From here, think about what you’d *test* if you were peer-reviewing a generated screenplay. Sequence.json is basically the checklist for that review: Sequence.json. The through-line from earlier slides is that decomposition buys you inspectable pieces; this slide names what those pieces should contain.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 14."
+      "transition_out": "Next we’ll pick up the thread on slide 14."
     },
     {
       "slide_number": 14,
-      "title_guess": "Slide 14",
+      "title_guess": "Scene Agent",
       "summary": "Scene Agent\n• An automated agent (no chat) that writes the scenes \nof the movie for each sequence\n• Inputs per sequence\n– Premise.json, arc.json, sequence.json – give agent global view of \nthe movie\n– All scenes generated so far in this sequence and the previous \nsequence – give agent local context for what should happen next\n•\nPrimary scene elements\n– Slug line – location of the scene\n– Blocks – series of actions and dialogues in the scene\n• This agent then creates a file scenes.json",
       "bullet_points": [
         "Scene Agent",
@@ -324,48 +496,75 @@
         "of the movie for each sequence",
         "• Inputs per sequence",
         "– Premise.json, arc.json, sequence.json – give agent global view of",
-        "the movie"
+        "the movie",
+        "– All scenes generated so far in this sequence and the previous",
+        "sequence – give agent local context for what should happen next"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Scene Agent",
+        "An automated agent (no chat) that writes the scenes",
+        "of the movie for each sequence",
+        "Inputs per sequence",
+        "Premise.json, arc.json, sequence.json – give agent global view of"
       ],
       "carryover_concepts": [
-        "Slide 13"
+        "Sequence.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 13”, carrying forward the ideas around: Sequence.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "Another angle on the same story: Scene Agent • An automated agent (no chat) that writes the scenes  of the movie for each sequence • Inputs per sequence – Premise.json, arc.json, sequence.json – give agent global view of  the movie – All scenes generated so far in this sequence and the previous  sequence – give agent local context for what should hap… Notice how this connects back to Slide 13.",
+      "relation_to_previous": "Having developed «Sequence.json», we now layer in Scene Agent so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Scene Agent with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Scene Agent» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Scene Agent as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "So zoom in with me on Scene Agent. The add here is: Develops the thread around Scene Agent with concrete detail from the deck.. What students often miss is that the hard part isn’t prompting once — it’s keeping later sections from drifting. We’ll keep returning to that as we add agents.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 15."
+      "transition_out": "Next we’ll pick up the thread on slide 15."
     },
     {
       "slide_number": 15,
-      "title_guess": "Slide 15",
+      "title_guess": "Scenes.json",
       "summary": "Scenes.json",
       "bullet_points": [
         "Scenes.json"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Scenes.json"
       ],
       "carryover_concepts": [
-        "Slide 14"
+        "Scene Agent",
+        "An automated agent (no chat) that writes the scenes"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 14”, carrying forward the ideas around: Scene Agent\n• An automated agent (no chat) that writes the scenes \nof the movie for each sequence\n• Inputs per sequence\n– Premise.json, arc.json, sequence.json – give agent global view of \nthe movie\n–.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "So if we take seriously This slide extends the prior discussion anchored in “Slide 14”, carrying forward the ideas around: Scene Agent • An automated agent (no chat) that writes the scenes  of the movie …, the natural next step is to look at Slide 15 — Scenes.json",
+      "relation_to_previous": "Having developed «Scene Agent», we now layer in Scenes.json so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Scenes.json with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Scenes.json» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Scenes.json as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "Let me connect this to Scene Agent. The move on this part of the deck is to pressure-test the idea that «Scenes.json» stands alone — it doesn’t; it sits in a bigger story about structure. In practical terms: Develops the thread around Scenes.json with concrete detail from the deck.. I want you to hear the mechanism, not memorize a bullet list.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 16."
+      "transition_out": "Next we’ll pick up the thread on slide 16."
     },
     {
       "slide_number": 16,
-      "title_guess": "Slide 16",
+      "title_guess": "Enhancement Agents",
       "summary": "Enhancement Agents\n•\nWe can improve the agentic flow \nby using agents to enhance \nintermediate outputs\n– Write better sequences or scenes\n– Clean up the premise\n– Make the arc more creative",
       "bullet_points": [
         "Enhancement Agents",
@@ -373,26 +572,42 @@
         "We can improve the agentic flow",
         "by using agents to enhance",
         "intermediate outputs",
-        "– Write better sequences or scenes"
+        "– Write better sequences or scenes",
+        "– Clean up the premise",
+        "– Make the arc more creative"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Enhancement Agents",
+        "We can improve the agentic flow",
+        "by using agents to enhance",
+        "intermediate outputs",
+        "Write better sequences or scenes"
       ],
       "carryover_concepts": [
-        "Slide 15"
+        "Scenes.json"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 15”, carrying forward the ideas around: Scenes.json.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "Picking up from where we left off: This slide extends the prior discussion anchored in “Slide 15”, carrying forward the ideas around: Scenes.json. Here I want to unpack Slide 16 — not by reading bullets, but by explaining why it matters for long-form coherence. Enhancement Agents • We can improve the agentic flow  by using agents to enhance  intermediate outputs – Write better sequences or scenes – Clean up the premise – Make the arc more creative",
+      "relation_to_previous": "Having developed «Scenes.json», we now layer in Enhancement Agents so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Enhancement Agents with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Enhancement Agents» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Enhancement Agents as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "If you’re tracking the arc of the lecture, this is where we tighten the screw: Enhancement Agents. The intuition I’d give you first is that models are locally strong but globally sloppy unless we scaffold them. So here’s the content in spoken form: Enhancement Agents, We can improve the agentic flow, by using agents to enhance. Hold onto that because we’ll reuse it when we wire agents together.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 17."
+      "transition_out": "Next we’ll pick up the thread on slide 17."
     },
     {
       "slide_number": 17,
-      "title_guess": "Slide 17",
+      "title_guess": "Generalizing to Other",
       "summary": "Generalizing to Other \nDocuments\n•\nBy modifying the agent prompts, this hierarchical flow can be \nused for other long text documents\nDocument\nPremise\nArc\nSequence\nScene\nArtist \nRendering\nBook\nPremise\nTable of contents\nChapter\nSub-chapter\nPodcast\nConcept\nFlow, format\nSegment\nBeat\nSong\nPremise\nStructure (verse, \nhooks, coda)\nVerse\nCouplet\nLecture\nLearning \nobjective\nOutline\nModule\nSlide\nBusiness \nplan\nValue prop\nOutline\nSection\nSub-section",
       "bullet_points": [
         "Generalizing to Other",
@@ -400,26 +615,43 @@
         "•",
         "By modifying the agent prompts, this hierarchical flow can be",
         "used for other long text documents",
-        "Document"
+        "Document",
+        "Premise",
+        "Arc"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Generalizing to Other",
+        "Documents",
+        "By modifying the agent prompts, this hierarchical flow can be",
+        "used for other long text documents",
+        "Document"
       ],
       "carryover_concepts": [
-        "Slide 16"
+        "Enhancement Agents",
+        "We can improve the agentic flow"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 16”, carrying forward the ideas around: Enhancement Agents\n•\nWe can improve the agentic flow \nby using agents to enhance \nintermediate outputs\n– Write better sequences or scenes\n– Clean up the premise\n– Make the arc more creative.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "The thread from the last slide leads us to Slide 17. In plain terms, Generalizing to Other  Documents • By modifying the agent prompts, this hierarchical flow can be  used for other long text documents Document Premise Arc Sequence Scene Artist  Rendering Book Premise Table of contents Chapter Sub-chapter Podcast Concept Flow, format Segment Beat Song Premise Structure (verse,  hooks, …",
+      "relation_to_previous": "Having developed «Enhancement Agents», we now layer in Generalizing to Other so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Generalizing to Other with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Generalizing to Other» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Generalizing to Other as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "Another way to say the same tension: we’re trying to make «Generalizing to Other» actionable. That means turning Generalizing to Other, Documents, By modifying the agent prompts, this hierarchical flow can be into something you could actually implement. I’m not going to read the slide line by line — I’m going to tell you what matters for coherence and why instructors put this block here.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That sets us up for what comes next as we move through slide 18."
+      "transition_out": "Next we’ll pick up the thread on slide 18."
     },
     {
       "slide_number": 18,
-      "title_guess": "Slide 18",
+      "title_guess": "Coding Session",
       "summary": "Coding Session\n• Write a short screenplay using Awesome-O\n• Add enhancement agents to the agentic flow\n• Modify Awesome-O for different document types",
       "bullet_points": [
         "Coding Session",
@@ -428,19 +660,33 @@
         "• Modify Awesome-O for different document types"
       ],
       "visual_elements": [
-        "slide image provided to model"
+        "Slide layout from PDF/image"
+      ],
+      "key_concepts": [
+        "Coding Session",
+        "Write a short screenplay using Awesome-O",
+        "Add enhancement agents to the agentic flow",
+        "Modify Awesome-O for different document types"
       ],
       "carryover_concepts": [
-        "Slide 17"
+        "Generalizing to Other",
+        "Documents"
       ],
-      "relation_to_previous": "This slide extends the prior discussion anchored in “Slide 17”, carrying forward the ideas around: Generalizing to Other \nDocuments\n•\nBy modifying the agent prompts, this hierarchical flow can be \nused for other long text documents\nDocument\nPremise\nArc\nSequence\nScene\nArtist \nRendering\nBook\nPremise\n.",
-      "likely_pedagogical_purpose": "introduce or elaborate a concept",
-      "narration": "Another angle on the same story: Coding Session • Write a short screenplay using Awesome-O • Add enhancement agents to the agentic flow • Modify Awesome-O for different document types Notice how this connects back to Slide 17.",
+      "relation_to_previous": "Having developed «Generalizing to Other», we now layer in Coding Session so students see how the argument advances rather than repeating the same claim.",
+      "pedagogical_role": "introduce_method",
+      "what_this_slide_adds": "Develops the thread around Coding Session with concrete detail from the deck.",
+      "likely_pedagogical_purpose": "Advance the lecture argument with new information.",
+      "teaching_goal": "Solidify «Coding Session» as a meaningful step in the staged pipeline.",
+      "likely_confusion_point": "Treating each agent as isolated instead of as shared context and constraints.",
+      "intuitive_hook": "Each stage shrinks what the model must hold in mind at once.",
+      "takeaway": "Remember Coding Session as the hinge for this section.",
+      "target_word_count": 80,
+      "narration": "From here, think about what you’d *test* if you were peer-reviewing a generated screenplay. Coding Session is basically the checklist for that review: Coding Session, Write a short screenplay using Awesome-O, Add enhancement agents to the agentic flow. The through-line from earlier slides is that decomposition buys you inspectable pieces; this slide names what those pieces should contain.",
       "speaking_notes": [
-        "Explain, don’t enumerate bullets",
-        "Gesture back to prior slide in one clause"
+        "Teach one idea; avoid list voice",
+        "Gesture to arc / pipeline, not slide numbers"
       ],
-      "transition_out": "That wraps the technical through-line; we’ll consolidate takeaways on the final slides."
+      "transition_out": "That’s the core pipeline story; we’ll close with how you’d adapt it beyond screenplays."
     }
   ]
 }

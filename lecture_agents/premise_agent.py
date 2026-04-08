@@ -9,11 +9,15 @@ class PremiseAgent:
         self.llm = llm
 
     def run(self, slide_descriptions: dict, output_path) -> dict:
+        slides = slide_descriptions.get("slides") or []
+        n = len(slides)
+        supporting_default = list(range(1, n + 1)) if n else []
+
         system = (
-            "You synthesize the premise of THIS specific lecture from the full slide_description.json. "
-            "The deck is Lecture 17 on AI-generated screenplays / long-form structured text and agentic decomposition. "
-            "The thesis, scope, learning_objectives, and central_terms must name concrete topics visible in the slides "
-            "(e.g. one-shot long-form limits, hierarchical planning, premise/arc/scene agents, screenplay structure). "
+            "You synthesize the premise of THIS specific lecture from slide_description.json (titles, key_concepts, summaries). "
+            "The deck is Lecture 17 on AI-generated screenplays, long-form structured text, and agentic decomposition. "
+            "The thesis, scope, learning_objectives, central_terms, supporting_slides, why_this_matters, and pedagogical_focus "
+            "must name concrete topics visible in the slides (one-shot limits, hierarchical planning, premise/arc/sequence/scene agents, coherence). "
             "Ban vague placeholders like 'understand main concepts' unless tied to named topics from the deck. "
             "Return JSON only."
         )
@@ -22,11 +26,14 @@ Infer premise.json grounded in the slide content below.
 
 Return JSON with keys:
 - thesis (string): one specific sentence about THIS lecture's argument
-- scope (list of strings): major subtopics in order
+- scope (list of strings): major subtopics in lecture order
 - learning_objectives (list of strings): measurable outcomes tied to slide content
 - audience (string)
 - central_terms (list of strings): jargon or recurring terms from the deck
 - instructor_strategy (string): how the instructor builds the story across slides
+- supporting_slides (list of int): slide numbers whose titles/concepts best support the thesis and learning objectives (cite real slide indices 1..N)
+- why_this_matters (string): 2–3 sentences on why this lecture matters conceptually (long-form failure modes, planning, agent design) — not generic motivation
+- pedagogical_focus (string): what kind of understanding students should leave with (e.g. diagnose drift, map pipeline stages, transfer to other documents)
 
 FULL slide_description.json:
 {slide_descriptions}
@@ -40,8 +47,8 @@ FULL slide_description.json:
             "scope": [
                 "Limits of one-shot long-form generation and context drift",
                 "Screenplay as a structured target for hierarchical decomposition",
-                "Agent roles for premise, arc, and scene-level planning",
-                "End-to-end flow from high-level story structure to executable script segments",
+                "Agent roles for premise, arc, sequence, and scene-level planning",
+                "End-to-end flow and generalization to other long documents",
             ],
             "learning_objectives": [
                 "Explain why one-shot generation struggles with long coherent documents.",
@@ -62,7 +69,17 @@ FULL slide_description.json:
                 "Motivate the failure mode of naive long outputs, then introduce structured decomposition and "
                 "walk through an agentic pipeline using screenplay generation as the running example."
             ),
+            "supporting_slides": supporting_default,
+            "why_this_matters": (
+                "Without staged planning, long generative outputs drift and contradict themselves; treating screenplays "
+                "as hierarchical artifacts makes automation tractable and transfers to books, reports, and other long forms."
+            ),
+            "pedagogical_focus": (
+                "Students should be able to justify multi-stage agent design from coherence requirements, not merely list tool names."
+            ),
         }
         result = self.llm.json_response(system, user, fallback)
+        if not result.get("supporting_slides") and supporting_default:
+            result["supporting_slides"] = supporting_default
         write_json(output_path, result)
         return result
