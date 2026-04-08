@@ -1,37 +1,79 @@
 {
   "speaker_profile": {
-    "tone": "Dense but spoken: builds examples before naming abstractions.",
-    "pacing": "Moderate, with room for examples; varies by segment (inferred from transcript excerpts in evidence_phrases).",
-    "fillers": [],
-    "framing_devices": [
-      "Uses concrete scenarios before abstract vocabulary when the transcript shows that pattern."
+    "tone": "Conversational, informal, and playful, often using humor and references to internet culture. The instructor maintains a friendly and approachable manner, frequently interjecting personal asides and addressing the audience directly as if speaking among peers.",
+    "pacing": "Generally fast-paced and energetic, with frequent digressions, parenthetical comments, and quick topic shifts. Long, winding sentences with pauses for rhetorical questions or off-script comments. The instructor sometimes circles back to clarify points after tangents.",
+    "fillers": [
+      "uh",
+      "um",
+      "like",
+      "you know",
+      "so",
+      "okay",
+      "yeah"
     ],
-    "transitions": [],
+    "framing_devices": [
+      "Sets up concepts with what-if scenarios ('what if you have, like, maybe… maybe you're, like, Yale Admissions'),",
+      "Opens topics using anecdotes or news ('I saw that in Twitter', 'she claims on Twitter'),",
+      "Frequently uses direct questions to introduce concepts ('Now, is that a true story, or is that fake Twitter propaganda?'),",
+      "Relates technical ideas to pop culture or everyday situations ('Harry Potter books', 'like a Twitch streamer'),",
+      "Frames tasks or problems in terms of the audience's practical needs ('if that was your career path, you may want to reconsider it')"
+    ],
+    "transitions": [
+      "So, yeah, let's get started.",
+      "Okay, so, um…",
+      "Now, if you…",
+      "But, yeah, it is 11AM, please.",
+      "Alright, and yeah, class is more fun if you, like, type in the chat and stuff, like, an actual stream, so don't be shy to, like, talk.",
+      "Alright, um, let's see.",
+      "Okay? Okay, so for those of you that, uh, just got here, um, haven't ever done online class with me before…",
+      "Nope. Alright, let's get the party started.",
+      "So, today I want to teach you…",
+      "But one thing your chatbot can't do yet…",
+      "Okay, so what if you have, like, maybe…"
+    ],
     "rhetorical_habits": [
-      "Returns to main thread after tangents when signaled in transcript."
+      "Frequent hedging and uncertainty (e.g., 'I don't know if it's true or not', 'maybe it can't find it'),",
+      "Contrast between extremes ('And if your projects sucks… Conversely, if you have, like, really awesome projects…'),",
+      "Restates or paraphrases key points using casual language ('you're in Yale. Rest of the world thinks you're a Yale graduate'),",
+      "Uses analogies and everyday comparisons ('like a Twitch streamer', 'coordinates on a map'),",
+      "Repeats announcements and important details with exasperated humor ('I don't know how many times I would tell this')"
     ],
     "teaching_moves": [
-      "Anchors claims in examples before generalizing.",
-      "Contrasts naive approach with structured alternative."
+      "starts with story or recent anecdote",
+      "introduces technical term using a relatable scenario",
+      "pauses to check for audience questions",
+      "restates key points using humor",
+      "explains with analogy or pop culture example",
+      "directly addresses/engages the chat"
     ],
     "delivery_patterns": [
-      "Motivating problem → structural response → implication for practice."
+      "anecdote → open question → warning or caution → explanation",
+      "pop culture or current event → relates to technical topic → explicit real-world problem framing",
+      "rule or announcement → anticipated student objection → humorous reinforcement",
+      "analogy setup → technical explanation → interactive check-in ('let me know in the chat')"
     ],
     "evidence_phrases": [
-      "And then once you plug it back in, she asks you, like, why'd you do that?",
-      "And you're like, oh, my bad, you're right, I shouldn't have done that.",
-      "But, like, it deleted her emails without her permission.",
-      "Now, is that a true story, or is that fake Twitter propaganda?",
-      "I don't know, but this is why I didn't do Clodbot yet.",
-      "I'm waiting for, like, people to be, like, the guinea pigs, and…",
-      "lose their email before I make you people, like,",
-      "So, that was also yesterday, I saw that in Twitter."
+      "she claims on Twitter, I don't know if it's true or not",
+      "Now, is that a true story, or is that fake Twitter propaganda? I don't know",
+      "I'm waiting for, like, people to be, like, the guinea pigs",
+      "lose their email before I make you people, like, at risk",
+      "it's Sunday, 11 a.m. Like, I don't know how many times I would tell this",
+      "I'm like, bro, I made a whole speech about it in class last time",
+      "dude, it's Yale SOM, grades don't matter, right?",
+      "like and subscribe",
+      "No swearing, nothing, no spamming the chat, I don't have a mod, so…",
+      "class is more fun if you, like, type in the chat and stuff, like, an actual stream",
+      "On the chat, they let it rip, you know?",
+      "Today's data to, like, shine on the chat.",
+      "So, today I want to teach you how to take your chatbot",
+      "it deleted her emails without her permission",
+      "the answer is, yeah, you can. And the technique is called retrieval augmented generation, which I'll yap about today"
     ],
-    "audience_assumption": "Students following a technical lecture with applied examples.",
+    "audience_assumption": "Assumes an audience of fellow students, potentially with diverse backgrounds (including non-native English speakers), approached as peers or community members; expects interactive participation (chat) and addresses learners informally ('you people', 'bro', 'dude').",
     "narration_preferences": {
       "avoid_bullet_reading": true,
       "prefer_explanation_over_verbatim_text": true,
-      "other": "Match hedges and emphasis visible in evidence_phrases."
+      "other": "Prefers analogies, examples, and contextually relevant humor to dry technical exposition."
     }
   }
 }
